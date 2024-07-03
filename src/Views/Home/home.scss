@@ -448,6 +448,28 @@ background: linear-gradient(to right, #42495c, $lightgray) !important; /* W3C, I
         }
       }
     }
+
+    .cx4ws5w5e {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-direction: column;
+      .xs85w85we4r56sed546 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: $x1primary;
+        padding: 5px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          background: $x3primary;
+        }
+          img {
+            height: 30px;
+          }
+      }
+    }
   }
 }
 

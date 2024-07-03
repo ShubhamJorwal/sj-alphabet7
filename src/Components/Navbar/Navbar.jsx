@@ -146,6 +146,15 @@ const Navbar = () => {
 
                   </div>
           </div>
+
+
+          <div className="cx4ws5w5e">
+            <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/casinoico1.svg" alt="" /> Online Casino</div>
+            <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/Roulette.svg" alt="" /> Roulette</div>
+            <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/Card%20Games.svg" alt="" /> Darbar</div>
+            <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons//Andar%20Bahar.svg" alt="" /> Andarbahar</div>
+            <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/Slots%20Games.svg" alt="" /> Slots</div>
+          </div>
         </div>
       </div>
       {isOpenx2 && <div className="overlayx6574we5r7e" onClick={toggleSliderx2}></div>}
