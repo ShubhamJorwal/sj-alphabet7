@@ -385,10 +385,20 @@ background: linear-gradient(to right, #42495c, $lightgray) !important; /* W3C, I
     position: absolute;
     top: 20px;
     right: 20px;
-    font-size: 30px;
     background: none;
     border: none;
     cursor: pointer;
+    svg {
+        color: $white;
+        width: 35px;
+        height: 35px;
+        background: $x1primary;
+        padding: 5px;
+        border-radius: 10px;
+        &:hover {
+          background: $x3primary;
+        }
+    }
   }
 
   .contentx5we5we {
@@ -460,7 +470,8 @@ background: linear-gradient(to right, #42495c, $lightgray) !important; /* W3C, I
         gap: 10px;
         background: $x1primary;
         padding: 5px 15px;
-        border-radius: 10px;
+        // border-radius: 10px;
+        width: 400px;
         cursor: pointer;
         &:hover {
           background: $x3primary;
@@ -470,7 +481,22 @@ background: linear-gradient(to right, #42495c, $lightgray) !important; /* W3C, I
           }
       }
     }
+
+    .xw8954sd85565sd {
+
+    }
   }
+}
+.mic-button {
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  margin: 5px;
+}
+
+.mic-button:focus {
+  outline: none;
 }
 
 .sdf4s54w85wcon {

@@ -18,6 +18,8 @@ import { HideScrollOverflow } from '../../Utils/HideScrollOverflow';
 import { FcMenu } from 'react-icons/fc';
 import { SlMenu } from 'react-icons/sl';
 import TelegramIco01 from '../Chat&Whatsapp/TelegramIco01';
+import { RxCross2 } from 'react-icons/rx';
+import VoiceInput from '../VoiceINput/VoiceInput';
 
 
 
@@ -129,9 +131,7 @@ const Navbar = () => {
 <div>
 
       <div className={`sidebarxs4wider ${isOpenx2 ? 'openx56w4er5' : ''}`}>
-        <button onClick={toggleSliderx2} className="closesdf26tton">
-          &times;
-        </button>
+        <button onClick={toggleSliderx2} className="closesdf26tton"><RxCross2 /> </button>
         <div className="contentx5we5we">
           <div className="logosectioncs4565w">
           <a href="/"><img src="/OrignialLogo.png" alt="" /></a>
@@ -154,6 +154,10 @@ const Navbar = () => {
             <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/Card%20Games.svg" alt="" /> Darbar</div>
             <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons//Andar%20Bahar.svg" alt="" /> Andarbahar</div>
             <div className="xs85w85we4r56sed546"><img src="/Final_Assets/Icons/Slots%20Games.svg" alt="" /> Slots</div>
+          </div>
+
+          <div className="xw8954sd85565sd">
+              <VoiceInput/>
           </div>
         </div>
       </div>

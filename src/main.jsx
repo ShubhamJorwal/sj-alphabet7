@@ -10,7 +10,7 @@
 //     </RouterProvider>
 //   </React.StrictMode>,
 // );
-
+import 'regenerator-runtime/runtime';
 
 
 import React from "react";
