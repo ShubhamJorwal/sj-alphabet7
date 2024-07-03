@@ -184,6 +184,7 @@ useEffect(() => {
     <>
       <Navbar />
       <div className="tobsecondbargamesx5s">
+    
 
       <div className="seclkx41-navigation">
       <button onClick={handlePrev} disabled={startIndex === 0}><MdChevronLeft /></button>

@@ -114,9 +114,54 @@ const Navbar = () => {
 
 
 
+  const [isOpenx2, setIsOpenx2] = useState(false);
+
+  const toggleSliderx2 = () => {
+    setIsOpenx2(!isOpenx2);
+  };
+
+
 
   return (
     <>
+
+
+<div>
+
+      <div className={`sidebarxs4wider ${isOpenx2 ? 'openx56w4er5' : ''}`}>
+        <button onClick={toggleSliderx2} className="closesdf26tton">
+          &times;
+        </button>
+        <div className="contentx5we5we">
+          <div className="logosectioncs4565w">
+          <a href="/"><img src="/OrignialLogo.png" alt="" /></a>
+          </div>
+
+          <div className="x5w598s23r1sd5f2">
+                  <div className="loginbuttonnavsxkk">
+                  <button onClick={() => { setShowLoginPopup(true); HideScrollOverflow(true); }}>Login</button>
+                  </div>
+                  <div className="signupbuttonnavsxkk">
+                    <button onClick={() => { setShowSignupPopup(true); HideScrollOverflow(true); }}>Sign-up</button>
+
+                  </div>
+          </div>
+        </div>
+      </div>
+      {isOpenx2 && <div className="overlayx6574we5r7e" onClick={toggleSliderx2}></div>}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
       <LoadingBar
         color="#fe9f23"
         height="3px"
@@ -161,13 +206,14 @@ const Navbar = () => {
 
         <div className="wrapper">
 
-          
-
-
+   
 
           <div className="logo">
             <a href="/"><img src="/logo.png" alt="" /></a>
           </div>
+
+
+
 
           {loginTrue ? (
             <>
@@ -344,6 +390,11 @@ const Navbar = () => {
           ) : (
             <>
               <ul className="nav-links">
+
+                
+              <div className="x4w8s234454sc5">
+
+
                 <div id="nav-linksx0s2">
                   <div className="loginbuttonnavsxkk">
                   <button onClick={() => { setShowLoginPopup(true); HideScrollOverflow(true); }}>Login</button>
@@ -353,6 +404,16 @@ const Navbar = () => {
 
                   </div>
                 </div>
+
+                
+                <div onClick={toggleSliderx2} className="sdf4s54w85wcon">
+              <img src="/Final_Assets/Icons/menuIconsls45.svg" alt="" />
+              </div>
+              </div>
+
+
+
+
 
                 <li id='sc45w52kjklac'>
                   {/* <Link id='casinonavlix' to={"/online-casino-games/AllGames"} className="desktop-item">Casino</Link> */}
