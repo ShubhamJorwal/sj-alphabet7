@@ -1,0 +1,74 @@
+@use '../../../scss/' as *;
+
+#swipermyswhome1 {
+  // border-radius: 50px 0 0 0;
+    border-radius: 10px;
+  // padding: 5px;
+  background: $primary06;
+  // background: url(/bodybackgroundx1.png);
+  // background: url(https://img.freepik.com/free-vector/dynamic-effect-glowing-curvy-light-trails-banner-design_1017-44168.jpg?t=st=1719300174~exp=1719303774~hmac=1cfb1e3a9c54b0fbe1ba3fd8f961c1f6f3ea68e784f2b94576e6b4725ff8793b&w=1380
+  // );
+  overflow: hidden;
+  margin: 5px 20px  5px 20px;
+  @include mobile {
+    margin: 5px 10px  20px 10px;
+  }
+  .swiper {
+    width: 100%;
+    // height: 347px;
+    height: 300px;
+    // height: 447px;
+    border-radius: 10px;
+
+    @include mobile {
+      height: 20vh;
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+        width: 10px !important;
+        height: 10px !important;
+        background: transparent;
+        border: 6px double $primary;
+        opacity: 0.5;
+
+        @include mobile {
+          
+        width: 5px !important;
+        height: 5px !important;
+        border: 4px double $primary;
+        }
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+        border: 7px double $primary;
+
+        @include mobile {
+          border: 4.5px double $primary;
+
+        }
+      }
+    }
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-v {
+    background: #eee;
+  }
+}

@@ -1,0 +1,97 @@
+@use "../../scss/" as *;
+
+#aniamtedheading01 {
+  .animate-charcter {
+    background-image: linear-gradient(
+      -225deg,
+      $primary 0%,
+      $primary05 45%,
+      #ff7d13 100%,
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 60px;
+    font-family: $font-family02;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 30px;
+    }
+  }
+
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+// heading02
+
+.containerxsesdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.containerxsesdf > span {
+  animation: flicker 3s linear infinite;
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: $primary;
+  // background: rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: $font-family02;
+  letter-spacing: .1em;
+  text-align: center;
+  @include mobile {
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 10px 20px 4px 20px;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+  10% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+}

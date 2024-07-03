@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="row">
+        <div class="col-lg-8">
+           <h2 class="main-title">Welcome To <strong class="text-success">@if(\Auth::user()->user_type == 'SuperAdmin') Alphabet7 @else {{\Auth::user()->name}} @endif</strong>Dashboard</h2>
+        </div>
+       
+        <div style="margin-bottom: 0px;margin-top: -37px;">
+           <form action="{{url('admin/dashboard')}}" method="get" style="height: 0px;margin-left: 46%;width: 60%;">
+                 <label for="startDate">From :</label>
+                 <input type="date" name="startDate" id="startDate" value="@if(isset($_GET['startDate']) && $_GET['startDate'] != ''){{date('Y-m-d',strtotime($_GET['startDate']))}}@else{{date('Y-m-d')}} @endif">
+                 <label for="toDate">To :</label>
+                 <input type="date" name="toDate" id="toDate" value="@if(isset($_GET['toDate']) && $_GET['toDate'] != ''){{date('Y-m-d',strtotime($_GET['toDate']))}}@else{{date('Y-m-d')}} @endif">
+                 <button type="submit" style="padding: 2px;width: 13%;margin-left: 5px;" class="btn btn-success">Search</button>
+                 <a href="{{url('admin/dashboard')}}" style="padding: 2px;width: 13%;margin-left: 5px;" class="btn btn-danger">Clear Filter
+                    {{-- <button type="submit" style="padding: 2px;width: 13%;margin-left: 5px;" class="btn btn-danger">Clear Filter</button> --}}
+                 </a>
+  
+           </form>
+
+           <div style="text-align: right;padding-left: 30%;" class="col-lg-4 text-right">
+            <nav class="nav nav-icon nav-icon-lg">
+               <a href="{{url('https://alphabet7.com/register/'.\Auth::user()->referrer_code)}}" target="_blank" class="nav-link" data-bs-toggle="tooltip" title="Copy" id="copy-link">
+                  <i class="fa fa-copy"></i>
+               </a>
+               {{-- <a href="" class="nav-link" data-bs-toggle="tooltip" title="Print"><i class="ri-printer-line"></i></a>
+               <a href="" class="nav-link" data-bs-toggle="tooltip" title="Report"><i class="ri-bar-chart-2-line"></i></a> --}}
+             </nav>
+         </div>
+         
+        </div>
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="BANNER_HTML_CONTAINER_ID" style="height:800px"></div>
+ 
+ 
+        <script type="text/javascript">
+            var script = document.createElement('script');
+            var server = '<BETGAMES_BANNER_SERVER>';
+          
+            script.onload = function () {
+                window.BetGamesWidget.setup({
+                    server:     server,
+                    partner:    'alphabet7_dev',
+                    token:      '06be8f45-a64c-4d97-a54d-54d2a17683c3',
+                    language:   'en',
+                    timezone:   '0',
+                    oddsFormat: 'ODDS_FORMAT>',
+                    iframeUrl:  'PARTNER_IFRAME_URL>',
+                    isMobile:   'IS_MOBILE_BETTING>', 
+                    games: [{
+                        id: '<GAME_ID>',
+                        containerId: '<BANNER_HTML_CONTAINER_ID>',
+                        height: '<HEIGHT_OF_HTML_CONTAINER>',
+                    }],
+                });
+            };
+          
+            script.type = 'text/javascript';
+            script.src = server + '/js/betgames-widget.js' + '?' + Date.now();
+          
+            document.head.appendChild(script);
+        </script> -->
+
+<!-- 
+        <div id="BANNER_HTML_CONTAINER_ID" style="width: 600px; height: 300px">
+            <iframe
+               frameborder="0"
+               allow="fullscreen"
+               scrolling="no"
+               src="https://integrations01-widget.betgames.tv/?partnerCode=alphabet7_dev&token=06be8f45-a64c-4d97-a54d-54d2a17683c3&language=en&oddsFormat=decimal&iframeUrl=<IFRAME_URL>&gameId=1"
+               style="width: 100%; height: 100%;">
+            </iframe>
+       </div> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iFrame Partner</title>
+</head>
+
+<body>
+    <div id="Containerid"></div>
+
+
+    <script type="text/javascript">
+        // var clientUrl = 'https://integrations01-webiframe.betgames.tv/auth?partnerCode=alphabet7_dev&token=-';
+        var clientUrl = 'https://integrations01-webiframe.betgames.tv';
+        // var clientUrl = 'https://webiframe.betgames.tv';
+
+        var script = document.createElement('script');
+
+        script.onload = function () {
+            window.BetGames.setup({
+                containerId: 'Containerid',
+                clientUrl: clientUrl,
+                partnerCode: 'alphabet7_dev',
+                token: 'd1322049-feb9-4502-98ae-dbc77c77e0b3',
+                language: 'en',
+                timezone: '0',
+                defaultPage: 'lobby',
+            });
+        }
+        script.type = 'text/javascript';
+        script.src = clientUrl + '/public/betgames.js' + '?' + Date.now();
+
+        document.head.appendChild(script);
+    </script>
+
+
+
+</body>
+
+</html> -->

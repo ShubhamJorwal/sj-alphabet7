@@ -1,0 +1,47 @@
+@use '../../scss/' as *;
+
+
+#sideaddallsid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    #belwosdxx22 { 
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .sdjfksdfk {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(127, 145, 158, 0.3333333333);
+            background: -webkit-linear-gradient(to right, rgba(127, 145, 158, 0.3333333333), rgba(64, 83, 103, 0.3098039216));
+            background: linear-gradient(to right, rgba(127, 145, 158, 0.486), rgba(64, 83, 103, 0.521));
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 14px;
+            img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+                background: $black;
+                padding: 10px;
+                border-radius: 0 30px 30px 0;
+            }
+        }
+    }
+    #belwosdxx23 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        img {
+    background: $primary06;
+    padding: 5px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            // box-shadow: 0 0 10px 0 rgba(255, 217, 0, 0.356) inset, 0 0 20px 2px hsla(43, 83%, 54%, 0.438);
+        }
+    }
+}

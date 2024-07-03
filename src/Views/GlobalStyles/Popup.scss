@@ -1,0 +1,263 @@
+@use "../../scss/" as *;
+
+.xssearchpopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  animation: slideUp 0.5s ease-in-out forwards;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $background_black;
+    padding: 21px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(8, 6, 57, 0.3);
+    background-color: $primary05;
+    cursor: pointer;
+    border-radius: 250px;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+
+  .overlaydivx489s {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -8px;
+    backdrop-filter: blur(8px);
+  }
+
+  .popup-content {
+    position: relative;
+    animation: slideUpContent 0.5s ease-in-out forwards;
+    position: absolute;
+    top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    width: 80%;
+    // padding: 0 50px;
+    .insidecontentx4w {
+      border-radius: 10px;
+      background: $background_black;
+      box-shadow: rgba(255, 255, 255, 0.3) 0px 00px 40px;
+      padding: 20px 15px;
+      // width: 80%;
+      min-height: 90vh;
+      margin: auto;
+      // padding: 0 50px;
+      z-index: 99999;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 1150px;
+    }
+    .heading1x515w51 {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 22px;
+      font-weight: 400;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      p {
+        background: $x3primary;
+        padding: 5px 8px;
+        border-radius: 10px;
+        font-size: 14px;
+      }
+    }
+    .close-buttonx54w65 {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: $white;
+      background: $x1primary;
+      @include flex(center, center);
+      padding: 5px;
+      border-radius: 10px;
+
+      &:hover {
+        // background: $LowopactiyPrimary;
+        background: $x3primary;
+      }
+    }
+  }
+
+  .sec15xw1s6 {
+    background: $x1primary;
+    backdrop-filter: blur(10px); // Apply blur to background elements
+    -webkit-backdrop-filter: blur(10px); // For Safari support
+    margin-top: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+
+    .searchks45x45s {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: fit-content;
+      input {
+        height: 35px;
+        padding: 10px;
+
+        // width: 100%;
+        //  max-width: 300px;
+
+        width: 400px;
+        border-radius: 10px;
+        border: none;
+        background: $primary05;
+        background: $x3primary;
+        border: 1px solid $x2primary;
+        color: $wtext;
+        
+        &::placeholder {
+          color: $wtext;
+
+        }
+        &:focus-visible {
+          outline: none;
+          background: $x2primary !important; 
+          color: $white;
+        }
+      }
+      img {
+        position: absolute;
+        right: 10px;
+        height: 18px;
+      }
+    }
+
+    .x4566w8143x {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .drofilterofproviders {
+        // background: $x1primary;
+        background: $x3primary;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border-radius: 10px;
+        height: 35px;
+        transition: .15s all;
+        border: 1px solid transparent;
+        &:hover {
+          background: $x1primary;
+          cursor: pointer;
+        }
+        &:active {
+          transform: scale(.95);
+        }
+        h1 {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 15px;
+          font-weight: 300;
+        }
+        img {
+          height: 16px;
+        }
+      }
+      .drofilterofcategories {
+        // background: $x1primary;
+        background: $x3primary;
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        gap: 15px;
+        height: 35px;
+        transition: .15s all;
+        border: 1px solid transparent;
+        &:hover {
+          background: $x1primary;
+          cursor: pointer;
+        }
+        &:active {
+          transform: scale(.95);
+        }
+        h1 {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 15px;
+          font-weight: 300;
+        }
+        img {
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .gamecardsx4w65s6w {
+    display: grid;
+    gap: 14px;
+    // grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    grid-template-columns: repeat(5,1fr);
+    padding: 0px 0;
+    justify-content: center;
+    align-items: center;
+    width: -webkit-fill-available;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpContent {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+}

@@ -1,0 +1,344 @@
+@use "../../scss/" as *;
+
+.tobsecondbargamesx5s {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  // justify-content: center;
+  justify-content: space-between;
+  padding: 2px;
+  margin-top: 6px;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  // background: $primary02;
+  background: $x1primary;
+  backdrop-filter: blur(10px); // Apply blur to background elements
+  -webkit-backdrop-filter: blur(10px); // For Safari support
+  // border: 1px solid rgba(255, 255, 255, 0.2);
+
+  // padding: 0 10px 0 0;
+  padding: 10px 10px 10px 10px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+  .seclkx41 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include mobile {
+      overflow: scroll;
+      padding: 10px 10px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  .seclkx42 {
+    span {
+      position: relative;
+      background: transparent;
+      display: flex;
+      align-items: center;
+
+      input {
+        border: none;
+        // border: 1px solid $stroke;
+        padding: 12px 20px 12px 15px;
+        border-radius: 10px;
+        background: transparent;
+        color: $white;
+        background: $primary02;
+        transition: 0.2s all ease;
+        min-width: 200px;
+        width: 100%;
+        float: right;
+        margin-right: -20% !important;
+        background: $background_black;
+
+        &::placeholder {
+          color: $lightgray;
+        }
+
+        &:focus-visible {
+          outline: none;
+          // padding-right: 120px;
+          box-shadow: rgba(100, 100, 111, 0.6) 0px 0px 12px 0px;
+        }
+      }
+
+      img {
+        right: 15px;
+        margin-bottom: 4px;
+        position: absolute;
+        height: 15px;
+      }
+    }
+  }
+
+  .xjksw5x1 {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    padding: 6px 12px;
+    transition: 0.3s all;
+    border-radius: 5px;
+    cursor: pointer;
+    // background: $primary03;
+    // background: $x2primary;
+
+    img {
+      // height: 30px;
+      height: 17px;
+    }
+    &:hover {
+      background: $primary04;
+      background: $primary02;
+      transform: scale(1.05);
+      img {
+      }
+    }
+  }
+}
+.whfilsdc455w58x {
+  // filter: invert(100%) brightness(200%);
+}
+
+.selectedlinkofc5ax5 {
+  // background: #536976; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right,#292e49,#536976); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right,hsla(231, 28%, 22%, 0.5),hsla(202, 17%, 39%, 0.5)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background: $x1primary !important;
+}
+
+.seclkx41-navigation {
+  display: flex;
+  align-items: center;
+}
+
+.seclkx41-navigation {
+  button {
+    border: none;
+    // padding: 2px;
+    margin:  0 10px;
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    svg {
+      background-color: $x2primary;
+      color: $white;
+      border-radius: 8px;
+      width: 28px;
+      height: 28px;
+      padding: 2px;
+
+      &:hover {
+        background: $x1primary;
+      }
+    }
+  }
+}
+
+.seclkx41-navigation button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  display: none;
+}
+
+.sliding-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+#mainsectionofsdc156w65 {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cs4ef54sd5f56sw51235 {
+  background: $LowopactiyPrimary !important;
+  svg {
+    font-size: 20px;
+  }
+}
+
+
+
+.filterlistofsearchcontainer {
+  animation: increaseHeight 2s ease-out forwards;
+  transition: .15s all;
+  background: $x1primary;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  // margin: 0px 25px;
+  margin: 0px 0px;
+  user-select: none;
+  flex-wrap: wrap;
+  padding-right: 40px;
+  position: relative;
+  .provcategorytem {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: $x3primary;
+  
+    img {
+      height: 17px;
+      transition: .15s all;
+      cursor: pointer;
+    
+    }
+    &:hover {
+      background: $x1primary;
+    }
+    &:active {
+      transform: scale(.95);
+    }
+  }
+
+  .provcategorytemx2 {
+    font-size: 14px;
+    background: $x3primary;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: .15s all;
+    cursor: pointer;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+      img {
+        height: 25px;
+      }
+ 
+    &:hover {
+      background: $x1primary;
+    }
+    &:active {
+      transform: scale(.95);
+    }
+  }
+}
+
+.selectedprovcat {
+
+  background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #42495c, $lightgray) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  position: relative;
+  padding-right: 20px !important;
+  transition: .15s all;
+  &::after {
+    content: url(/Final_Assets/Icons/checkIcons2x1.svg);
+    right: -10px;
+    position: absolute;
+    color: #f5f5f5;
+    width: 22px;
+    height: 23px;
+    z-index: 999 !important;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  img {
+  }
+}
+
+
+.filterxs5w65ereapplied {
+  border: 1px dashed $lightgray !important;
+
+
+
+  position: relative;
+  transition: .15s all;
+  &::after {
+    content: url(/Final_Assets/Icons/checkIcons2x1.svg);
+    right: 10px;
+    position: absolute;
+    width: 22px;
+    height: 23px;
+    z-index: 999 !important;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .iconofdroparrow {
+    opacity: .0 !important;
+
+  }
+}
+
+
+.crosbtoscfiltercate85w {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  border: none;
+  background: $x2primary;
+  @include flex(center,center);
+  border-radius: 10px;
+  cursor: pointer;
+  svg {
+    color: $white;
+    width: 25px;
+    height: 25px;
+    padding: 2px;
+  }
+  &:hover {
+    background: $LowopactiyPrimary;
+    svg {
+  }
+  }
+}
+
+
+
+
+
+
+
+
+@keyframes increaseHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%; /* You can also use a specific height value, e.g., 300px */
+  }
+}

@@ -1,0 +1,63 @@
+$primary: #ebb327;
+$textprimary: hwb(43 22% 0%);
+
+$stroke: gray;
+$primary02: #131f3b;
+$primary03: #202e4ed5;
+$primary04: #1f315a;
+$primary05: rgb(221, 221, 221);
+
+$x1primary: #ffffff1a;
+$x2primary: hsla(0, 0%, 100%, 0.2);
+$x3primary: #333740;
+
+$lightgray: #888888;
+
+
+// $primary03: #112133;
+// $primary04: rgb(48, 48, 48);
+
+// $primary06: #292621;
+// $primary06: linear-gradient(to right, #243B55, #141E30);
+$primary06: #171716;
+$primary07: #3a3b3c;
+$primary08: #7B756B;
+$bordercolorsofin: #474747;
+// $background_black: #171716;
+// $background_black: #101727;
+$background_black: #0d121c;
+$LowopactiyPrimary: hwb(43 15% 8% / 0.6);
+$LowopactiyPrimary02: hwb(43 15% 8% / 0.9);
+
+
+
+$white: #ffffff;
+$black: #222222;
+
+$wtext: #c1c1c1;
+
+$mobile-width: 600px;
+$tablet-width: 1023px;
+
+@mixin flex($aligin-item, $justify-content) {
+  display: flex;
+  align-items: $aligin-item;
+  justify-content: $justify-content;
+}
+@mixin font($sizefont) {
+  font-size: $sizefont;
+  font-family: $font-family;
+  
+}
+
+@mixin overlay {
+  background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+$font-family: "Nunito", sans-serif;
+$font-family02: "Epilogue", sans-serif;

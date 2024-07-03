@@ -1,0 +1,195 @@
+@use "../../scss/" as *;
+
+#maincontcasinoxsjk {
+  display: flex;
+  width: 100%;
+  padding: 0 10px 0 10px;
+  gap: 30px;
+  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  // background: url(/public/assets/loginsec.webp);
+  // background-size: cover;
+  // background-position: center;
+  // border-radius: 50px 0 0 0;
+
+  border-top: 1px solid $x3primary;
+  .sec45x9wjklca5w {
+    margin-left:  0 !important;
+  }
+  @include mobile {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  #s2conxjsk {
+    width: 280px;
+    background: transparent;
+    height: fit-content;
+    padding: 13px 0;
+    @include mobile {
+      
+      width: 100%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .searchbar {
+      display: flex;
+      align-items: center;
+      svg {
+        height: 35px;
+
+        width: 35px;
+        padding: 8px;
+        border-radius: 5px 0 0 5px;
+        background: $LowopactiyPrimary;
+      }
+      input {
+        height: 35px;
+        background: $x3primary;
+        padding: 10px;
+        width: 80%;
+        border-radius: 0 5px 5px 0;
+        border: none;
+        @include font(14px);
+        font-weight: 600;
+        transition: .2s all;
+        &:focus-visible {
+          scale: 1.05;
+          outline: none;
+        }
+      }
+    }
+    #s32h3sdl {
+      text-transform: capitalize;
+      font-weight: 300;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      @include mobile {
+        flex-wrap: wrap;
+        flex-direction: unset;
+      }
+      a {
+        list-style: none;
+        background: $x1primary;
+        color: $white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 8px 0 0;
+        border-radius: 10px 10px 10px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 14px;
+        gap: 10px;
+        transition: .15s all;
+        img {
+            width: 35px;
+            background: $white;
+            background: $x3primary;
+            border-radius: 10px;
+            padding: 3px;
+            
+        }
+
+        &:hover {
+background: $x2primary;  
+          color: $white;
+        }
+
+        &:active {
+          transform: scale(.95);
+        }
+      }
+    }
+  }
+
+  #s1conxjsk {
+    width: 100%;
+
+    #parentscardssectionc21s {
+      padding: 0 !important;
+    }
+    #gamescardssectionc21s {
+      margin:  0 !important;
+      width: 100% !important;
+    }
+  }
+
+
+}
+.activeprovider {
+  background: #141E30;
+  background: -webkit-linear-gradient(to right, #243B55, #141E30) !important;
+  background: linear-gradient(to right, #42495c, #888888) !important;
+  pointer-events: none;
+  position: relative;
+  @include mobile {
+    transform: scale(1);
+  }
+
+  &::after {
+    content: url(/Final_Assets/Icons/checkIcons2x1.svg);
+    right: 5px;
+    position: absolute;
+    color: #f5f5f5;
+    width: 22px;
+    height: 23px;
+    z-index: 999 !important;
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+}
+
+
+
+
+
+$gradient: linear-gradient(45deg, #f3ec78, #af4261);
+$glow-color: #af4261;
+$animation-duration: 1.5s;
+
+.gradient-border-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-image: $gradient;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $glow-color;
+        animation: glow $animation-duration ease-in-out infinite;
+    }
+
+    @keyframes glow {
+        0%, 100% {
+            box-shadow: 0 0 5px $glow-color, 0 0 15px $glow-color, 0 0 30px $glow-color, 0 0 45px $glow-color;
+        }
+        50% {
+            box-shadow: 0 0 10px $glow-color, 0 0 20px $glow-color, 0 0 40px $glow-color, 0 0 60px $glow-color;
+        }
+    }
+}

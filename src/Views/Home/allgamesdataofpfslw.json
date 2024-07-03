@@ -1,0 +1,508 @@
+
+  [
+    {
+      "id": 16,
+      "imageUrl": "/assets/BETGAMES/skyward.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "New Launch", "Crash Games", "Aviator"],
+      "urlparam": 27,
+      "heading": "Skyward"
+    },
+    {
+      "id": 1,
+      "imageUrl": "/assets/BETGAMES/wheeloffortune.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Wheel games"],
+      "urlparam": 7,
+      "heading": "Wheel of Fortune"
+    },
+    {
+      "id": 2,
+      "imageUrl": "/assets/BETGAMES/dueldice.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "New Launch", "Dice Games"],
+      "urlparam": 10,
+      "heading": "Dice Duel"
+    },
+    {
+      "id": 3,
+      "imageUrl": "/assets/BETGAMES/lucky5.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 3,
+      "heading": "Lucky 5"
+    },
+    {
+      "id": 4,
+      "imageUrl": "/assets/BETGAMES/lucky6.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 9,
+      "heading": "Lucky 6"
+    },
+    {
+      "id": 5,
+      "imageUrl": "/assets/BETGAMES/lucky7.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Card Games", "Ball Games"],
+      "urlparam": 1,
+      "heading": "Lucky 7"
+    },
+    {
+      "id": 6,
+      "imageUrl": "/assets/BETGAMES/speedy7.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Card Games"],
+      "urlparam": 11,
+      "heading": "Speedy 7"
+    },
+    {
+      "id": 7,
+      "imageUrl": "/assets/BETGAMES/6pluspoker.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Card Games", "Poker"],
+      "urlparam": 12,
+      "heading": "6+ Poker"
+    },
+    {
+      "id": 8,
+      "imageUrl": "/assets/BETGAMES/warofbets.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Card Games", "Dragon Tiger"],
+      "urlparam": 8,
+      "heading": "War of Bets"
+    },
+    {
+      "id": 9,
+      "imageUrl": "/assets/BETGAMES/betonpoker.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Card Games", "Poker"],
+      "urlparam": 5,
+      "heading": "Bet on Poker"
+    },
+    {
+      "id": 10,
+      "imageUrl": "/assets/BETGAMES/betsonbaraccat.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Baccarat"],
+      "urlparam": 6,
+      "heading": "Bet on Baccarat"
+    },
+    {
+      "id": 11,
+      "imageUrl": "/assets/BETGAMES/classicwheelrng.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Wheel games"],
+      "urlparam": 16,
+      "heading": "Classic Wheel"
+    },
+    {
+      "id": 12,
+      "imageUrl": "/assets/BETGAMES/tbasket.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 25,
+      "heading": "T-Basket"
+    },
+    {
+      "id": 13,
+      "imageUrl": "/assets/BETGAMES/tkick.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 24,
+      "heading": "T-Kick"
+    },
+    {
+      "id": 14,
+      "imageUrl": "/assets/BETGAMES/footballgrid.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 17,
+      "heading": "FootBall Grid"
+    },
+    {
+      "id": 15,
+      "imageUrl": "/assets/BETGAMES/instantlucky7.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "Ball Games"],
+      "urlparam": 26,
+      "heading": "Instant Lucky 7"
+    },
+
+      
+
+    
+
+    {
+      "id": 18,
+      "imageUrl": "/assets/BETGAMES/classicroulette.webp",
+      "provider": "betgames",
+      "categories": ["All Games", "Trending Games", "New Launch", "Roulette"],
+      "urlparam": 31,
+      "heading": "Live Roulette"
+    },
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": 9912,
+      "imageUrl": "/assets/SEVENMOJOS/AndarBahar.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "AndarBahar", "Card Games"],
+      "urlparam":   "ab-demo",
+      "heading": "Andar Bahar"
+    },
+    {
+      "id": 991,
+      "imageUrl": "/assets/SEVENMOJOS/UnlimitedBlackjack.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "Blackjack", "Card Games"],
+      "urlparam": "ubsp-demo",
+      "heading": "Unlimited Blackjack"
+    },
+    {
+      "id": 997,
+      "imageUrl": "/assets/SEVENMOJOS/GalaxyBlackjack.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "Blackjack", "Card Games"],
+      "urlparam": "bj-demo",
+      "heading": "Blackjack"
+    },
+    {
+      "id": 999,
+      "imageUrl": "/assets/SEVENMOJOS/Roulette.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "Roulette"],
+      "urlparam": "rl-demo",
+      "heading": "Roulette"
+    },
+    {
+      "id": 9911,
+      "imageUrl": "/assets/SEVENMOJOS/Baccarat.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "Baccarat", "Card Games"],
+      "urlparam": "bc-demo",
+      "heading": "Baccarat"
+    },
+
+    {
+      "id": 998,
+      "imageUrl": "/assets/SEVENMOJOS/DragonTigerIndStu.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "DragonTiger", "Card Games"],
+      "urlparam": "dt-demo",
+      "heading": "Dragon Tiger"
+    },
+
+    {
+      "id": 993,
+      "imageUrl": "/assets/SEVENMOJOS/TeenPatti.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "Trending Games", "TeenPatti", "Card Games"],
+      "urlparam": "tp-demo",
+      "heading": "Teen Patti"
+    },
+
+    
+    {
+      "id": 9913,
+      "imageUrl": "/assets/SEVENMOJOS/TeenPattiOff.webp",
+      "provider": "7mojosLogo",
+      "categories": ["All Games", "TeenPatti", "Card Games"],
+      "urlparam": "tpfo-demo",
+      "heading": "Teen Patti Face Off"
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "id": 101,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/WildBandidos.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "wb",
+      "heading": "Wild Bandidos"
+      },
+      {
+      "id": 102,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/BandidosShowdown.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "bs",
+      "heading": "Bandidos Showdown"
+      },
+      {
+      "id": 103,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/AdventureSaga.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "as",
+      "heading": "Adventure Saga"
+      },
+      {
+      "id": 104,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/AgeofCleopatra.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "aoc",
+      "heading": "Age of Cleopatra"
+      },
+      {
+      "id": 105,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/Big5Africa.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "b5a",
+      "heading": "Big 5 Africa"
+      },
+      {
+      "id": 106,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/DragonFlower.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "df",
+      "heading": "Dragon's Flower"
+      },
+      {
+      "id": 107,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/FortuneGenie.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "fg",
+      "heading": "Fortune Genie"
+      },
+      {
+      "id": 108,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/FruitDash.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "fd",
+      "heading": "Fruit Dash"
+      },
+      {
+      "id": 109,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/80FruitDash.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "80fd",
+      "heading": "80 Fruit Dash"
+      },
+      {
+      "id": 110,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/fruityreels.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "fr",
+      "heading": "Fruity Reels"
+      },
+      {
+      "id": 111,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/40fruityreels.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "40fr",
+      "heading": "40 Fruity Reels"
+      },
+      {
+      "id": 112,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/GoldenVegas.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "gv",
+      "heading": "Golden Vegas"
+      },
+      {
+      "id": 113,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/HotFortuneWheel.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "hfw",
+      "heading": "Hot Fortune Wheel"
+      },
+      {
+      "id": 114,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/HotFortuneWheel80.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "hfw80",
+      "heading": "Hot Fortune Wheel 80"
+      },
+      {
+      "id": 115,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/PatrickRiches.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "pr",
+      "heading": "Patrick's Riches"
+      },
+      {
+      "id": 116,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/RuneWars.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "rw",
+      "heading": "Rune Wars"
+      },
+      {
+      "id": 117,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/UltraClassicHot.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "uch",
+      "heading": "Ultra Classic Hot"
+      },
+      {
+      "id": 118,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/60UltraClassicHot.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "60uch",
+      "heading": "60 Ultra Classic Hot"
+      },
+      {
+      "id": 119,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/UnderwaterAdventure.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "ua",
+      "heading": "Underwater Adventure"
+      },
+      {
+      "id": 120,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/LuckyFruitLines.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "lfl",
+      "heading": "Lucky Fruit Lines"
+      },
+      {
+      "id": 121,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/40HotTwist.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "40ht",
+      "heading": "40 Hot Twist"
+      },
+      {
+      "id": 122,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/20hottwist.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "20ht",
+      "heading": "20 Hot Twist"
+      },
+      {
+      "id": 123,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/InfiniteWilds.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "iw",
+      "heading": "Infinite Wilds"
+      },
+      {
+      "id": 124,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/WildSombrero.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "ws",
+      "heading": "Wild Sombrero"
+      },
+      {
+      "id": 125,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/RiverofGold.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "rog",
+      "heading": "River of Gold"
+      },
+      {
+      "id": 126,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/CooktheChef.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "ctc",
+      "heading": "Cook the Chef"
+      },
+      {
+      "id": 127,
+      "imageUrl": "/assets/SEVENMOJOS/Slots/MafiaLoot.webp",
+      "provider": "7mojosLogo",
+      "categories": ["Slots Games"],
+      "urlparam": "ml",
+      "heading": "Mafia Loot"
+      }
+  ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

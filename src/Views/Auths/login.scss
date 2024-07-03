@@ -1,0 +1,600 @@
+@use "../../scss/" as *;
+
+#circlerotdots {
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+
+  .sdc4s5df45s6dxse {
+    text-align: center;
+  }
+  .buttontohandlecks {
+    border: none;
+    background: transparent;
+    color: $white;
+    background: rgb(82, 81, 81);
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    @include font(16px);
+    transition: .3s all;
+    &:hover {
+      background: $primary;
+      color: $black;
+    }
+
+    &:active {
+      transform: scale(.95);
+    }
+  }
+
+
+  .x56wserlowiotp {
+    background: $LowopactiyPrimary02;
+    color: $black;
+  }
+
+  #specialfieldksk {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    position: relative;
+    width: 300px;
+    img {
+      width: 40px;
+      object-fit: contain;
+      // border: 1px dashed $primary05;
+      border-radius: 5px;
+      position: absolute;
+      right: 5px;
+      z-index: 1;
+      @include mobile {
+        right: 30px;
+      }
+    }
+    input {
+      position: relative;
+      margin: 0 !important;
+    }
+  }
+
+  #greenlinetodisplatime {
+    span {
+      color: #1fbd59;
+    }
+  }
+  #loginpage {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    overflow: hidden;
+    // border: 2px solid $primary;
+    @include mobile {
+      width: calc(100% - 20px);
+      margin:  unset auto;
+
+    }
+
+
+    #secoftplog {
+      display: flex;
+      // background: $primary06;
+      background: $x3primary;
+      border-radius: 10px;
+      padding: 10px 15px;
+      justify-content: space-between;
+      align-items: center;
+      svg,
+      img {
+        width: 100px;
+      }
+      a {
+        color: $white;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        span {
+          color: $primary;
+        }
+      }
+    }
+
+
+
+    #secoftplogx2 {
+      margin-top: 20px;
+      a {
+        background: $primary05;
+        padding: 5px 10px;
+        text-align: center;
+        display: flex;
+        gap: 7px;
+        width: fit-content;
+        margin: auto;
+        border-radius: 10px;
+        color: white;
+        background: #1fbd59;
+        justify-content: center;
+        transition: 0.3s all;
+        &:hover {
+          transform: scale(1.1);
+          background: #128c3e;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      padding: 14px 10px;
+      position: relative;
+      h3 {
+        @include font(18px);
+        position: absolute;
+        font-weight: 300;
+        transform: rotate(-90deg);
+        left: -10px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        z-index: 1;
+        @include mobile {
+          left: -25px;
+        }
+      }
+
+      input {
+        height: 42px;
+        width: 300px;
+        border-radius: 7px;
+        margin: auto;
+        @include font(16px);
+        padding: 10px;
+        border: none;
+        transition: .1s all;      
+        background: transparent;        
+        color: $white;
+        border: 1px solid $bordercolorsofin;  
+        @include mobile {
+          
+        width: calc(100% - 80px);
+        }
+        &:focus-visible {
+          transform: scale(0.98);
+          outline: none;
+          // background: $white;
+        }
+      }
+
+      #checkboxeslogx1 {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin: auto;
+        @include mobile {
+          
+          width: calc(100% - 100px);
+          }
+        div {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+        }
+        input {
+          height: 17px;
+          width: 17px;
+          cursor: pointer;
+        }
+      }
+
+      #errorlinelog18 {
+        color: red;
+        font-weight: 800;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+
+  #Registernpage {
+    z-index: 1;
+    background: $background_black;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    #secoftplog {
+      display: flex;
+      // background: $primary06;
+      background: $x3primary;
+      border-radius: 10px;
+      padding: 10px 15px;
+      justify-content: space-between;
+      svg,
+      img {
+        width: 100px;
+      }
+      a {
+        color: $white;
+        display: flex;
+        align-items: center;
+        span {
+          color: $primary;
+        }
+      }
+    }
+
+    #secoftplogx2 {
+      margin-top: 20px;
+      a {
+        background: $primary05;
+        padding: 5px 10px;
+        text-align: center;
+        display: flex;
+        gap: 7px;
+        width: fit-content;
+        margin: auto;
+        border-radius: 10px;
+        color: white;
+        background: #1fbd59;
+        justify-content: center;
+        transition: 0.3s all;
+        &:hover {
+          transform: scale(1.1);
+          background: #128c3e;
+        }
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+      padding: 20px 60px 20px 60px;
+      position: relative;
+      align-items: center;
+      @include mobile {
+        padding: 30px
+      }
+      h3 {
+        @include font(18px);
+        position: absolute;
+        font-weight: 300;
+        transform: rotate(-90deg);
+        left: -25px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 0 10px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        font-size: 16px;
+        z-index: 1;
+        @include mobile {
+          left: -25px;
+        }
+      }
+
+      input {
+        height: 42px;
+        width: 300px;
+        border-radius: 7px;
+        margin: auto;
+        @include font(16px);
+        padding: 10px;
+        border: none;
+        transition: .1s all;      
+        background: transparent;        
+        color: $white;
+        border: 1px solid $bordercolorsofin;  
+        @include mobile {
+          
+          width: calc(100% - 50px);
+          }
+
+        &:focus-visible {
+          transform: scale(0.97);
+          outline: none;
+          // background: $white;
+        }
+      }
+
+      #checkboxeslogx1 {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        margin: auto;
+        @include mobile {
+          
+          width: calc(100% - 80px);
+          }
+        div {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+        }
+        input {
+          height: 17px;
+          width: 17px;
+          cursor: pointer;
+        }
+      }
+
+      #errorlinelog18 {
+        color: red;
+        font-weight: 800;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+
+    #formalagregistek {
+      
+      display: grid !important;
+      grid-template-columns: repeat(2,1fr) !important;
+      &:nth-child(7),button {
+        grid-column: span 2; /* This will span the 7th div across both columns */
+        justify-self: center; /* This will center the 7th div horizontally */
+        margin-top: 10px;
+      }
+      @include mobile {
+        display: flex !important;
+        width: 100%;
+
+      }
+    } 
+  }
+}
+
+.buttonx1 {
+  min-width: 300px;
+  min-height: 42px;
+  border-radius: 10px;
+  background: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.1s ease-in;
+  border: none;
+  cursor: pointer;
+  &:hover {
+  }
+  @include mobile {
+    min-width: calc(100% - 100px);
+  }
+
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(.95);
+  }
+}
+
+.lightx1::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(
+    rgb(255, 225, 168) 20deg,
+    transparent 150deg
+  );
+  width: 200px;
+  height: 400%;
+  border-radius: 8px !important;
+  animation: rotate 4s linear infinite;
+  @include mobile {
+    min-width: calc(100% - 200px);
+  }
+}
+
+.lightx1::after {
+  content: "Login";
+  position: absolute;
+  width: 280px;
+  height: 53px;
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px !important;
+  font-size: 16px;
+  font-family: $font-family;
+  @include mobile {
+    width: calc(100% - 100px);
+  }
+  
+}
+.lightx5::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(
+    rgba(255, 225, 168, 0) 20deg,
+    transparent 150deg
+  );
+  width: 200px;
+  height: 400%;
+  border-radius: 8px;
+  animation: rotate 54s linear infinite;
+  opacity: .6;
+  transform: scale(0.95);
+  
+  
+}
+
+.lightx5::after {
+  content: "Loading...";
+  position: absolute;
+  width: 298px;
+  height: 53px;
+  background: #ffffff33;
+  opacity: .6;
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: $font-family;
+  cursor: not-allowed;
+  transform: scale(0.95);
+}
+
+.lightx2::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(
+    rgb(255, 225, 168) 20deg,
+    transparent 150deg
+  );
+  width: 200px;
+  height: 400%;
+  border-radius: 8px;
+  animation: rotate 4s linear infinite;
+}
+
+.lightx2::after {
+  content: "Send OTP";
+  position: absolute;
+  width: 298px;
+  height: 53px;
+  background: #ffffff33;
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: $font-family;
+}
+.lightx3::before {
+  content: "";
+  position: absolute;
+  background-image: conic-gradient(
+    rgb(255, 225, 168) 20deg,
+    transparent 150deg
+  );
+  width: 200px;
+  height: 400%;
+  border-radius: 8px;
+  animation: rotate 4s linear infinite;
+}
+
+.lightx3::after {
+  content: "Submit";
+  position: absolute;
+  width: 298px;
+  height: 53px;
+  background: #ffffff33;
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: $font-family;
+}
+.buttonx1s452d{
+  background: #11998e;
+  background: -webkit-linear-gradient(to right, #23bd5e, #11998e);
+  background: linear-gradient(to right, #23bd5e, #11998e);
+  border-radius: 250px;
+  border: none;
+  color: $white;
+  padding: 5px 15px;
+  @include font(16px);
+  transition: .3s all;
+  cursor: pointer;
+
+  &:hover {
+    background: $primary;
+    // background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+    // background: linear-gradient(to top, #feb95e, #a56716);
+    // transform: scale(.95);
+    color: $black;
+  }
+  
+  &:active {
+    transform: scale(.95);
+    
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.particlex12s {
+  --angle: (5 * var(--index));
+  --radius: 30;
+  --x: calc(sin(var(--angle)) * var(--radius) * 1vmin);
+  --y: calc(cos(var(--angle)) * var(--radius) * 1vmin);
+
+  --angle2: calc(var(--index) * 1turn / var(--total));
+  --x2: calc(sin(var(--angle2)) * var(--radius) * 1vmin);
+  --y2: calc(cos(var(--angle2)) * var(--radius) * 1vmin);
+
+  --size: 2;
+  --speed: 4s;
+  --delay: calc(var(--index) * var(--speed) / var(--total) * 4);
+
+  --hue-angle: 10;
+  --hue-range: 60;
+  --hue-start: 20;
+
+  animation: animation var(--speed) ease-out infinite alternate var(--delay);
+  transform: translate3d(var(--x), var(--y), 0);
+  opacity: 0;
+
+  border-radius: 50%;
+  background: currentColor;
+  color: oklch(
+    100% 0.3
+      calc(
+        sin(var(--hue-angle) * var(--index)) * var(--hue-range) +
+          var(--hue-start)
+      )
+  );
+  position: absolute;
+  width: calc(var(--size) * 0.1vmin);
+  height: calc(var(--size) * 0.1vmin);
+  contain: strict;
+  z-index: 0;
+  @include mobile {
+    display: none;
+  }
+}
+
+@keyframes animation {
+  100% {
+    transform: translate3d(var(--x2), var(--y2), 0);
+    opacity: 1;
+  }
+}

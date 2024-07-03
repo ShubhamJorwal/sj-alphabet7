@@ -1,0 +1,61 @@
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 94px;
+    right: 12px;
+    z-index: 9999;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: breathe 2s ease-in-out infinite;
+  }
+  
+  .whatsapp-btn i {
+    color: #fff;
+    font-size: 24px;
+    animation: beat 2s ease-in-out infinite;
+    text-decoration: none;
+  }
+  
+  @keyframes breathe {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+  
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes beatx01s {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(211, 170, 37, 0.5);
+    }
+    50% {
+      transform: scale(1.15);
+      box-shadow: 0 0 0 10px rgba(232, 255, 240, 0.123);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }

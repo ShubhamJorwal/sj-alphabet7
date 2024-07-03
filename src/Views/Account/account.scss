@@ -1,0 +1,2055 @@
+@use "../../scss/" as *;
+
+#profilesecmainacpl {
+  min-height: calc(100vh - 80px);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 20px;
+  // background: url(/assets/backextpgs.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 50px 0 0 0;
+
+  @include mobile {
+    flex-direction: column;
+    padding: 10px 10px;
+    border-radius: 20px 0 0 0;
+  }
+
+  .blocproflinchil {
+    display: flex;
+    flex-direction:column;
+    gap: 5px;
+    span {
+      padding-left: 5px;
+    }
+  }
+
+  #pfcplx1 {
+    flex-basis: 80%;
+    // background: rgb(19, 19, 19);
+    // background: $primary06;
+    padding: 0px 20px 60px 20px;
+    padding: 5px 5px 60px 10px;
+    // padding: 10px 10px 60px 10px;
+    // border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+    // border-left: 1px solid $primary07;
+    background: black;
+    // background: url(/assets/profilesectionbackimage.webp);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // // background-position: bottom;
+    height: fit-content;
+    min-height: 60vh;
+    @include mobile {
+      padding: 15px 10px;
+    }
+
+  }
+  #pfcplx2 {
+    flex-basis: 20%;
+    border-radius: 10px;
+    height: fit-content;
+  }
+}
+
+
+#locapthnavtolf {
+  display: flex;
+  align-items: center;
+  // flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+
+  background: #7f919e55;
+  background: -webkit-linear-gradient(to right, #7f919e55, #4053674f);
+  background: linear-gradient(to right, #7f919e55, #4053674f);
+
+  background: rgba(127, 145, 158, 0.3333333333);
+  background: -webkit-linear-gradient(to right, rgba(127, 145, 158, 0.3333333333), rgba(64, 83, 103, 0.3098039216));
+  background: linear-gradient(to right, rgba(127, 145, 158, 0.486), rgba(64, 83, 103, 0.521));
+
+
+
+
+
+  border-radius: 10px 10px 50px 10px;
+  padding: 5px;
+  padding-right: 25px;
+  // border-bottom: 1px dashed $primary05;
+
+
+  @include mobile {
+    flex-direction: column;
+    align-items: unset;
+    border-radius: 10px 10px 40px 10px;
+  }
+  #lfo1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: gold;
+    font-size: 22px;
+    svg {
+      font-size: 35px;
+      color: $white;
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+      padding: 5px;
+      border-radius: 20px;
+    }
+  }
+
+  #lfo2 {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    @include mobile {
+      flex-wrap: wrap;
+      padding-right: 20px;
+    }
+    svg {
+      color: gold;
+    }
+    a {
+      color: $white;
+      color: gold;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+    #lf03 {
+      color: $white;
+    }
+  }
+}
+
+#locapthnavtolfx54 {
+
+  h2 {
+    font-weight: 300;
+  }
+  #threecardspp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    
+    border-bottom: 1px dashed $primary07;
+  border-top: 1px dashed $primary07;
+  @include mobile {
+    flex-direction: column;
+    align-items: unset;
+    gap: 10px;
+  }
+    .divthdspp {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 70px;
+        height: 70px;
+        background: #bdc3c7;
+        background: -webkit-linear-gradient(to right, #bdc3c7, #405367);
+        background: linear-gradient(to right, #bdc3c7, #405367);
+
+        background: $primary06;
+        padding: 15px;
+        border-radius: 15px;
+        // border: 01px dashed $white;
+        @include mobile {
+          width: 60px;
+          height: 60px;
+        }
+      }
+
+      .skspp {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include mobile {
+          justify-content: center;
+
+        }
+
+        .valueskppss {
+          color: #25d366;
+          font-size: 15px;
+          @include mobile {
+            // line-height: 20px;
+          }
+        }
+        .negative-value {
+          color: red;
+        }
+      }
+    }
+  }
+
+  #blockofuserpfrofile9x {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    // padding: 20px 0 20px 0;
+    padding: 5px;
+    margin-top: 20px;
+    background: $primary07;
+    width: fit-content;
+    border-radius: 10px;
+    @include mobile {
+      padding: 20px 0 20px 0;
+      padding: 5px 5px;
+      width: 100%;
+      
+    }
+    p {
+      background: rgba(127, 145, 158, 0.3333333333);
+      background: -webkit-linear-gradient( to right, rgba(127, 145, 158, 0.3333333333), rgba(64, 83, 103, 0.3098039216));
+      background: linear-gradient(to right,rgba(127, 145, 158, 0.486),rgba(64, 83, 103, 0.521));
+      height: 45px;
+      
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // border-radius: 10px 10px 0px 10px;
+      padding: 10px;
+      
+    border-radius: 10px;
+      background: $primary06;
+      
+      @include mobile {
+        padding: 10px;
+        
+      }
+    }
+    .copybtnskk {
+      display: flex;
+      gap: 10px;
+
+      @include mobile {
+        flex-direction: column;
+        height: auto;
+      }
+
+      span {
+        color: $primary;
+      }
+      button {
+        width: 30px;
+        height: 30px;
+        @include flex(center, center);
+        font-size: 15px;
+        border-radius: 50px;
+        border: none;
+        transition: 0.3s all;
+        cursor: pointer;
+        background: #bdc3c7;
+        background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+        background: linear-gradient(to right, #f1eac3, #bdc3c7);
+        &:hover {
+          transform: scale(1.1);
+          background: #feb95e;
+          background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+          background: linear-gradient(to top, #feb95e, #a56716);
+          color: $white;
+        }
+      }
+    }
+  }
+
+  #blockofuserpfrofile {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 0;
+    gap: 20px;
+    // border-bottom: 1px dashed $primary;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    p {
+      display: flex;
+      // gap: 10px;
+      // background: rgba(127, 145, 158, 0.3333333333);
+      // background: -webkit-linear-gradient(
+      //   to right,
+      //   rgba(127, 145, 158, 0.3333333333),
+      //   rgba(64, 83, 103, 0.3098039216)
+      // );
+      // background: linear-gradient(
+      //   to right,
+      //   rgba(127, 145, 158, 0.486),
+      //   rgba(64, 83, 103, 0.521)
+      // );
+
+      background: $primary07;
+
+
+      align-items: center;
+      justify-content: space-between;
+      height: 45px;
+      border-radius: 10px 10px 0px 10px;
+      border-radius: 5px;
+      padding-left: 15px;
+      input {
+        padding: 10px;
+        height: 45px;
+        border: none;
+        background: rgb(225, 228, 231);
+
+        // width: calc(100% + 20px);
+
+        border-radius: 10px 0 0px 10px;
+        border-radius: 5px 0 0px 5px;
+        margin-left: -14px;
+        color: $black;
+        @include font(16px);
+        width: 100%;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      button {
+        height: 45px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        border-radius: 10px 5px 5px 10px;
+        // background: #feb95e;
+        // background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        // background: linear-gradient(to top, #feb95e, #a56716);
+
+        background: $primary;
+        color: $black;
+        @include font(16px);
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          // background: #bdc3c7;
+          // background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+          // background: linear-gradient(to right, #2c3e50, #bdc3c7);
+          
+        background: $LowopactiyPrimary;
+        }
+      }
+
+      .savebtmnfkspxk {
+        background: #11998e; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #38ef7d,
+          #11998e
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #38ef7d,
+          #11998e
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        &:hover {
+          background: #11998e; /* fallback for old browsers */
+          background: -webkit-linear-gradient(
+            to right,
+            #38ef7d,
+            #11998e
+          ); /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(
+            to right,
+            #16a14b,
+            #11998e
+          ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+      }
+    }
+  }
+}
+
+#xklueschtireofdenotinc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+  @include mobile {
+    
+    width: 100%;
+  }
+  h2 {
+    @include font(22px);
+    font-weight: 300;
+  }
+  #cardofxksl {
+    padding: 20px 40px 20px 20px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    @include mobile {
+      width: 100%;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    #caxkls45 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include mobile {
+        display: none;
+      }
+      .x1pp {
+        display: flex;
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        svg {
+          // background: #bdd4e4;
+          // background: -webkit-linear-gradient(to right, #bdd4e4, #5b7c92);
+          // background: linear-gradient(to right, #bdd4e4, #5b7c92);
+          background: $primary06;
+          width: 30px;
+          height: 30px;
+          padding: 7px;
+          border-radius: 110px;
+        }
+      }
+      #x1pp455s {
+        font-size: 16px;
+      }
+    }
+    #caxkls46 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      .x1pzdx1xsd {
+        width: 140px;
+        @include mobile {
+          width: 100px;
+        }
+      }
+      .x1pzdx1 {
+        background: #7f919e;
+        background: -webkit-linear-gradient(to right, #7f919e, #405367);
+        background: linear-gradient(to right, #7f919e, #405367);
+        padding: 8px 15px;
+        border-radius: 20px;
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+
+    #caxkls47 {
+      background: rgba(127, 145, 158, 0.3333333333);
+      background: -webkit-linear-gradient(
+        to right,
+        rgba(127, 145, 158, 0.3333333333),
+        rgba(64, 83, 103, 0.3098039216)
+      );
+      background: linear-gradient(
+        to right,
+        rgba(127, 145, 158, 0.486),
+        rgba(64, 83, 103, 0.521)
+      );
+      background: rgba(0, 0, 0, 0.3);
+
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px 20px;
+      border-radius: 10px 30px 10px 30px;
+
+      @include mobile {
+        padding: 10px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+
+      #dklskds47 {
+        p {
+          
+        font-size: 16px;
+        }
+        #dklskds47sp2 {
+          color: #25d366;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.bronzelevelrev {
+  background: #603813; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #b29f94ab,
+    #603813ab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #b29f94ab,
+    #603813ab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.silverlevelrev {
+  background: #757f9a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #d7dde8ab,
+    #757f9aab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    hsla(219, 27%, 88%, 0.6),
+    hsla(224, 15%, 53%, 0.6)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.goldlevelrev {
+  background: #f2994a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f2c94cab,
+    #f2994aab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f2c94cab,
+    #f2994aab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.Titanlevelrev {
+  background: #000046; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1cb5e0ab,
+    #000046ab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1cb5eab0,
+    #000046ab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.Diamondlevelrev {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55e9,
+    #141e30e8
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55e9,
+    #141e30e8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#newdepqrcoimg {
+  // width: 80px;
+  // height: 140px;
+  // width: 100%;
+  width: 80%;
+  margin: 10px auto;
+  // margin-bottom: 20px;
+  object-fit: contain;
+}
+
+// change password
+
+#locapthnavtolfx54se {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 450px;
+  // background: rgba(127, 145, 158, 0.3333333333);
+  // background: -webkit-linear-gradient(to right,rgba(127, 145, 158, 0.3333333333),rgba(64, 83, 103, 0.3098039216));
+  // background: linear-gradient(to right,rgba(127, 145, 158, 0.7),rgba(64, 83, 103, 0.7));
+  padding: 10px;
+  border-radius: 10px;
+
+  @include mobile {
+    width: 100%;
+  }
+  h2 {
+    font-weight: 300;
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+
+  .sdkoswlcp {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    input {
+      width: 100%;
+      height: 40px;
+      min-width: 300px;
+      max-width: 350px;
+      border-radius: 5px;
+      background: $primary05;
+      border: none;
+      padding: 10px;
+      @include font(16px);
+      @include mobile {
+        min-width: unset;
+        width: 100%;
+      }
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  button {
+    // background: #feb95e;
+    // background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+    // background: linear-gradient(to top, #feb95e, #a56716);
+    background: $primary;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    margin: 10px 0;
+    // color: $white;
+    color: $black;
+    @include font(16px);
+    transition: 0.3s all;
+    font-weight: 600;
+    width: 350px;
+    cursor: pointer;
+
+    @include mobile {
+      width: 100%;
+    }
+    &:hover {
+      transform: scale(1.02);
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #38ef7d, #11998e);
+    }
+    &:active {
+      transform: scale(1);
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #38ef7d, #11998e);
+    }
+  }
+}
+
+// deposit amount
+
+#locapthnavtolfx56 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px dashed $primary;
+  padding: 10px 0 20px 0;
+  h2 {
+    font-weight: 300;
+  }
+
+  #threecardspp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    
+
+    .paymenttypesdr {
+      display: flex;
+      padding: 5px 10px;
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      min-width: 150px;
+      justify-content: flex-start;
+
+      cursor: pointer;
+      gap: 5px;
+      transition: 0.3s all;
+      gap: 15px;
+
+      &:hover {
+        background: #11998e;
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+        background: linear-gradient(to right, #16a14b, #11998e);
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        border-radius: 10px;
+
+      }
+    }
+    .selected-payment-type {
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #16a14b, #11998e);
+      transform: scale(1);
+      // border: 1px solid transparent;
+    }
+  }
+}
+
+#locapthnavtolfx57 {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed $primary;
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .bank-detailsxwesre {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+    flex-basis: 50%;
+    h3 {
+      font-weight: 300;
+    }
+
+    #pbelj357 {
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #3dc06f, #11998e);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        background: #0f2027; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding: 10px 15px;
+        border-radius: 10px;
+        gap: 10px;
+        transition: 0.3s all;
+        cursor: pointer;
+        opacity: 0.6;
+
+        &:hover {
+          transform: scale(1.02);
+          opacity: 1;
+        }
+
+        &:active {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          justify-content: space-between;
+          gap: 40px;
+          @include mobile {
+            gap: 10px;
+            
+          }
+          span {
+            color: $primary;
+            font-size: 17px;
+            pointer-events: none;
+
+            button {
+              width: 30px;
+              height: 30px;
+              font-size: 15px;
+              border-radius: 50px;
+              border: none;
+              transition: 0.3s all;
+              cursor: pointer;
+              background: #bdc3c7;
+              background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);
+              background: linear-gradient(to right, #f1eac3, #bdc3c7);
+              &:hover {
+                transform: scale(1.1);
+                background: #feb95e;
+                background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+                background: linear-gradient(to top, #feb95e, #a56716);
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+    .selected-bank-detail {
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+      opacity: 1;
+      position: relative;
+      max-width: 450px;
+      &::after {
+        content: "\21EE";
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+        padding: 5px;
+        border-radius: 50px;
+        z-index: 11;
+        width: 17px;
+        font-size: 22px;
+        height: 17px;
+        @include flex(center, center);
+        animation: beatx01s 2s ease-in-out infinite;
+      }
+
+      span {
+        pointer-events: unset;
+        color: $white;
+        @include font(14px);
+      }
+    }
+  }
+  #deposiskofoint {
+    flex-basis: 50%;
+    #sdfew252x {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      min-width: 400px;
+
+      justify-content: flex-end;
+      float: left;
+      // max-width: 400px !important;
+
+      @include mobile {
+        min-width: 100%;
+      }
+      h3 {
+        font-weight: 300;
+      }
+      form {
+        background: rgba(127, 145, 158, 0.3333333333);
+        background: -webkit-linear-gradient(
+          to right,
+          rgba(127, 145, 158, 0.3333333333),
+          rgba(64, 83, 103, 0.3098039216)
+        );
+        background: linear-gradient(
+          to right,
+          rgba(127, 145, 158, 0.3333333333),
+          rgba(64, 83, 103, 0.3098039216)
+        );
+
+        padding: 10px;
+        border-radius: 20px;
+        // min-width: 400px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .sectionforiskd252 {
+          input {
+            background: $primary05;
+            border: none;
+            @include font(16px);
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+
+            &:focus-visible {
+              outline: none;
+            }
+          }
+        }
+        button {
+          @include font(16px);
+          // background: #feb95e;
+          // background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+          // background: linear-gradient(to top, #feb95e, #a56716);
+          border: none;
+          background: $primary;
+          padding: 10px;
+          border-radius: 5px;
+          color: $white;
+          font-weight: 600;
+          color: $black;
+          transition: 0.3s all;
+
+          margin-top: 10px;
+          cursor: pointer;
+          &:hover {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #38ef7d, #11998e);
+            transform: scale(0.95);
+            color: $white;
+          }
+          &:active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+#x2s558e2233s {
+  padding: 10px;
+  background: rgba(127, 145, 158, 0.3333333333);
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(127, 145, 158, 0.3333333333),
+    rgba(64, 83, 103, 0.3098039216)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(127, 145, 158, 0.3333333333),
+    rgba(64, 83, 103, 0.3098039216)
+  );
+
+  display: flex;
+  margin-top: 40px;
+  flex-direction: column;
+  gap: 10px;
+  @include mobile {
+    margin-top: 0;
+  }
+  p {
+    font-size: 14px;
+    background: rgba(127, 145, 158, 0.3333333333);
+    background: -webkit-linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.3333333333),
+      rgba(64, 83, 103, 0.3098039216)
+    );
+    background: linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.7),
+      rgba(64, 83, 103, 0.7)
+    );
+    padding: 5px 10px;
+    line-height: 27px;
+    border-radius: 5px;
+  }
+}
+
+// promotions
+
+#bonusxks1f03 {
+  // background: rgba(127, 145, 158, 0.3333333333);
+  // background: -webkit-linear-gradient( to right,rgba(127, 145, 158, 0.3333333333),rgba(64, 83, 103, 0.3098039216));
+  // background: linear-gradient(to right,rgba(127, 145, 158, 0.486),rgba(64, 83, 103, 0.521));
+  border-radius: 10px;
+  padding: 10px;
+  h2 {
+    font-weight: 300;
+    font-size: 22px;
+  }
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  .bonus-history-container {
+    margin: 20px;
+  }
+
+  .bonus-history-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .bonus-history-table th,
+  .bonus-history-table td {
+    border: 1px solid $primary07;
+    padding: 8px;
+    text-align: left;
+  }
+  .received {
+    color: #25d366 !important;
+  }
+  .processing {
+    color: red !important;
+  }
+
+  .bonus-history-table th {
+    background-color: $primary05;
+    color: $black;
+  }
+  thead {
+  }
+}
+
+#reactpaginationskk {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  ul {
+    display: flex;
+    li {
+      text-decoration: none;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.2s;
+      min-width: 39px;
+      min-height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      color: $white;
+      font-weight: 600;
+      a {
+        padding: 10px;
+      }
+      &:hover {
+        background: $primary04;
+        color: $white;
+      }
+    }
+
+    .previous,
+    .next {
+      border-radius: 10px;
+      &:hover {
+        border: none;
+        background: $primary05;
+        border-radius: 10px;
+        color: $black;
+      }
+    }
+    .btnsForPN {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      svg {
+        font-size: 18px;
+      }
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .active {
+      background: #feb95e;
+      background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+      background: linear-gradient(to top, #feb95e, #a56716);
+      color: white;
+      font-weight: bold;
+      border-radius: 50px;
+    }
+  }
+}
+
+#nobonusetcsjkd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  img {
+    width: 100px;
+    padding: 10px;
+    background: rgba(127, 145, 158, 0.3333333333);
+    background: -webkit-linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.3333333333),
+      rgba(64, 83, 103, 0.3098039216)
+    );
+    background: linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.6),
+      rgba(64, 83, 103, 0.6)
+    );
+    border-radius: 10px;
+  }
+  p {
+    line-height: 30px;
+  }
+}
+
+// withdraw section
+// complete kyc
+
+#pendingksyksld {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  img {
+    width: 80px;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    @include mobile {
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #16a14b, #11998e);
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    a {
+
+      width: fit-content;
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+
+      border: none;
+      color: $white;
+      padding: 10px;
+      border-radius: 20px 10px;
+      @include font(16px);
+      transition: .3s all;
+      cursor: pointer;
+
+      &:hover {
+        background: #11998e;
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+        background: linear-gradient(to right, #16a14b, #11998e);
+        transform: scale(.95);
+      }
+      &:active {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+#kycverficksxk {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  h2 {
+    font-weight: 300;
+    font-size: 22px;
+  }
+
+  form {
+    // background: rgba(127, 145, 158, 0.3333333333);
+    // background: -webkit-linear-gradient( to right,rgba(127, 145, 158, 0.3333333333),rgba(64, 83, 103, 0.3098039216));
+    // background: linear-gradient(to right,rgba(127, 145, 158, 0.486),rgba(64, 83, 103, 0.521));
+    background: $primary02;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    width: fit-content;
+    @include mobile {
+      padding: 10px 10px;
+
+    }
+
+    #sdjfksdjkx25s {
+      display: flex;
+      justify-content: space-between;
+      gap: 5%;
+      button {
+        @include font(16px);
+        // background: #feb95e;
+        // background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        // background: linear-gradient(to top, #feb95e, #a56716);
+        background: $primary;
+        padding: 10px 20px;
+        border: none;
+        color: $white;
+        color: $black;
+        font-weight: 600;
+        border-radius: 5px;
+
+        flex-basis: 35%;
+        transition: 0.3s all;
+        cursor: pointer;
+
+        &:hover {
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #38ef7d, #11998e);
+          transform: scale(1.05);
+          color: $white;
+        }
+        &:active {
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #38ef7d, #11998e);
+          transform: scale(1);
+        }
+      }
+
+      input {
+        background: $primary05;
+        border: none;
+        @include font(16px);
+        font-weight: 600;
+        padding: 10px 15px;
+        border-radius: 5px;
+        width: fit-content;
+        transition: 0.3s all;
+        flex-basis: 60%;
+
+        &:focus-visible {
+          transform: scale(1.05);
+          outline: none;
+        }
+      }
+    }
+
+    #buttonsofuploadjsdkfdj {
+      display: flex;
+      gap: 20px;
+      .main-wrapperxsdrewre {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #2c5364;
+        background: -webkit-linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        );
+        background: linear-gradient(to right, #2c53646e, #203a436e, #0f20276e);
+        padding: 10px;
+        border-radius: 10px;
+      }
+    }
+
+    #buttonskjskxe {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      width: fit-content;
+      label {
+        font-weight: 300;
+      }
+
+      div {
+        display: flex;
+        gap: 20px;
+        @include mobile {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        span {
+          background: #7f919e;
+          background: -webkit-linear-gradient(to right, #7f919e, #405367);
+          background: linear-gradient(to right, #7f919e, #405367);
+          padding: 10px;
+          border-radius: 10px;
+          transition: 0.3s all;
+          cursor: pointer;
+          border: 1px dashed $primary;
+          @include mobile {padding: 5px;}
+          &:hover {
+            transform: scale(1.05);
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #1ec45d, #11998e) !important;
+          }
+          &:active {
+            transform: scale(1);
+          }
+        }
+        .selected-document {
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #38ef7d, #11998e) !important;
+        }
+      }
+    }
+  }
+}
+
+// bank details
+
+#bankdetailssd22 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h2 {
+    font-weight: 300;
+  }
+
+  #skfbanktosflebd {
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    border-bottom: 1px dashed $primary;
+    padding-bottom: 20px;
+    @include mobile {
+      
+    grid-template-columns: repeat(1, 1fr);
+    }
+
+    #bankdetailsflex-sfk {
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+      padding: 10px 10px 60px 10px;
+      border-radius: 10px;
+      transition: 0.3s all;
+      position: relative;
+      overflow: hidden !important;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      height: fit-content;
+
+      row-gap: 10px;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+      &:active {
+        transform: scale(1);
+      }
+
+      #botksxremarks {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        border-radius: 10px 0 0 20px !important;
+        padding: 10px 20px;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+      }
+      #defaultaccbotleftbd {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 10px 20px 0 !important;
+        padding: 10px 20px;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+      }
+
+      #topeditbutonsk {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        border-radius: 10px 0 10px 10px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: $black;
+          color: $white;
+        }
+
+        svg {
+          font-size: 20px;
+        }
+      }
+      #topeditbutonskdsjfjksd {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        padding: 5px;
+        border-radius: 10px 10px 10px 10px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: $black;
+          color: $white;
+        }
+
+        svg {
+          font-size: 20px;
+        }
+      }
+
+
+
+      p {
+        background: #0f2027; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+
+        height: fit-content;
+      }
+
+      #goldenbaksbd {
+        background: #7f919e;
+        background: -webkit-linear-gradient(to right, #7f919e, #405367);
+        background: linear-gradient(to right, #7f919e, #405367);
+      }
+      #silverbaksbd {
+        background: #11998e;
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+        background: linear-gradient(to right, #3dc06f, #11998e);
+      }
+    }
+  }
+
+  #addbankdetailsdibdb {
+    padding: 20px 10px;
+    background: rgba(127, 145, 158, 0.3333333333);
+    background: -webkit-linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.3333333333),
+      rgba(64, 83, 103, 0.3098039216)
+    );
+    background: linear-gradient(
+      to right,
+      rgba(127, 145, 158, 0.486),
+      rgba(64, 83, 103, 0.521)
+    );
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 20px;
+    position: relative;
+
+    #bankaddlogoico {
+      width: 60px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 10px;
+      background: $black;
+      border-radius: 20px 0 0 20px;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      p {
+        background: $primary02;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 10px;
+        gap: 5px;
+
+        input {
+          background: rgba(127, 145, 158, 0.3333333333);
+          background: -webkit-linear-gradient(
+            to right,
+            rgba(127, 145, 158, 0.3333333333),
+            rgba(64, 83, 103, 0.3098039216)
+          );
+          background: linear-gradient(
+            to right,
+            rgba(127, 145, 158, 0.486),
+            rgba(64, 83, 103, 0.521)
+          );
+          height: 45px;
+          border-radius: 10px 10px 0px 10px;
+          border: none;
+          padding: 15px;
+          color: $white;
+          @include font(16px);
+          width: 250px;
+
+          &::placeholder {
+            color: rgb(165, 165, 165);
+          }
+
+          &:focus-visible {
+            outline: none;
+            background: $primary05;
+            color: $black;
+          }
+        }
+
+        #newseaifsc {
+          display: flex;
+
+          input {
+            width: 210px;
+            border-radius: 10px 0 0 10px;
+          }
+          button {
+            padding: 10px;
+            border-radius: 0 10px 10px 0;
+            border: none;
+
+            &:hover {
+              background: $primary;
+              cursor: pointer;
+              color: $white;
+            }
+            svg {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+      #defaultsacdb {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-left: 10px;
+        @include mobile {
+        }
+        span {
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #3dc06f, #11998e);
+
+          padding-left: 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          transition: 0.3s all;
+
+          button {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+              background: #feb95e;
+              background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+              background: linear-gradient(to top, #feb95e, #a56716);
+
+              color: $white;
+            }
+          }
+        }
+
+        #btnmbsdaddbankdetails {
+          padding: 10px 20px;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+
+          transition: 0.2s all;
+
+          @include font(16px);
+          font-weight: 600;
+          &:hover {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #3dc06f, #11998e);
+            color: $white;
+            transform: scale(1.052);
+          }
+
+          &:active {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+}
+
+#blowstonwithdm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h2 {
+    font-weight: 300;
+  }
+
+  #bankdetailsthatprovided {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    
+    border-bottom: 1px dashed $primary;
+    padding-bottom: 20px;
+    @include mobile {
+      grid-template-columns: repeat(1,1fr);
+
+    }
+
+    .selectedbankinwithdraw {
+      opacity: 1 !important;
+      background: #7f919e;
+      background: -webkit-linear-gradient(
+        to right,
+        #7f919e,
+        #405367
+      ) !important;
+      background: linear-gradient(to right, #5d7586, #284461) !important;
+
+      transform: scale(1.02) !important;
+      border: 1px dashed $primary !important;
+      position: relative;
+
+      &::after {
+        content: "\21EE";
+        position: absolute;
+        top: -15px;
+        right: -10px;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+        padding: 5px;
+        border-radius: 50px;
+        z-index: 11;
+        width: 30px;
+        font-size: 27px;
+        height: 30px;
+        @include flex(center, center);
+        animation: beatx01s 2s ease-in-out infinite;
+      }
+    }
+
+    #bankdetailsflex-sfk {
+      background: #7f919e;
+      background: -webkit-linear-gradient(to right, #7f919e, #405367);
+      background: linear-gradient(to right, #7f919e, #405367);
+      padding: 20px 10px 20px 10px;
+      border-radius: 10px;
+      transition: 0.3s all;
+      position: relative;
+      opacity: 0.7;
+      cursor: pointer;
+      border: 1px dashed red;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+
+      height: fit-content;
+      row-gap: 10px;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+      &:active {
+        transform: scale(0.97);
+      }
+
+      #botksxremarks {
+        bottom: 0;
+        right: 0;
+        border-radius: 10px 0 0 20px !important;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+      }
+      #defaultaccbotleftbd {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 0 10px 20px 0 !important;
+        padding: 10px 20px;
+        background: #feb95e;
+        background: -webkit-linear-gradient(to top, #feb95e, #a56716);
+        background: linear-gradient(to top, #feb95e, #a56716);
+      }
+
+      #topeditbutonsk {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        border-radius: 10px 0 10px 10px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background: $black;
+          color: $white;
+        }
+
+        svg {
+          font-size: 26px;
+        }
+      }
+
+      p {
+        background: #0f2027; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #2c5364,
+          #203a43,
+          #0f2027
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 14px;
+        height: fit-content;
+      }
+
+      #goldenbaksbd {
+        background: #7f919e;
+        background: -webkit-linear-gradient(to right, #7f919e, #405367);
+        background: linear-gradient(to right, #7f919e, #405367);
+      }
+      #silverbaksbd {
+        background: #11998e;
+        background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+        background: linear-gradient(to right, #3dc06f, #11998e);
+      }
+    }
+  }
+
+  #selecwithdaraamounts1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px dashed $primary;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    width: fit-content;
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+      #labelforamountsecs1 {
+        display: flex;
+        gap: 20px;
+        #ins10203050100clas {
+          display: flex;
+          gap: 14px;
+          @include mobile {
+            flex-wrap: wrap;
+          }
+
+          button {
+            background: #7f919e;
+            background: -webkit-linear-gradient(to right, #7f919e, #405367);
+            background: linear-gradient(to right, #7f919e, #405367);
+
+            @include font(14px);
+            border-radius: 10px;
+            padding: 10px 20px;
+            color: $white;
+            border: 1px dashed $primary;
+            cursor: pointer;
+
+            transition: 0.3s all;
+
+            &:hover {
+              background: #11998e;
+              background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+              background: linear-gradient(to right, #3dc06f, #11998e);
+              transform: scale(1.05);
+              border: 1px dashed transparent;
+            }
+            &:active {
+              background: #11998e;
+              background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+              background: linear-gradient(to right, #3dc06f, #11998e);
+              transform: scale(1);
+              border: 1px dashed transparent;
+            }
+          }
+          .disbaledbuttonwd {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #7f919e;
+            background: -webkit-linear-gradient(to right, #7f919e, #405367);
+            background: linear-gradient(to right, #7f919e, #405367);
+            &:hover {
+              background: #7f919e;
+              background: -webkit-linear-gradient(to right, #7f919e, #405367);
+              background: linear-gradient(to right, #7f919e, #405367);
+            }
+          }
+        }
+
+
+
+
+        input {
+          padding: 10px;
+          border-radius: 10px;
+          border: none;
+          @include font(16px);
+          font-weight: 600;
+          background: $primary05;
+          width: 200px;
+        }
+      }
+      #divofdisplayamount {
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p {
+          background: $white;
+          color: $black;
+          padding: 10px 20px;
+          border-radius: 10px;
+          font-weight: 600;
+          font-size: 14px;
+          span {
+            color: green;
+            font-weight: 900;
+          }
+        }
+
+        #widhsdjksibmitskls {
+          background: #7f919e;
+          background: -webkit-linear-gradient(to right, #7f919e, #405367);
+          background: linear-gradient(to right, #7f919e, #405367);
+
+          @include font(14px);
+          border-radius: 10px;
+          padding: 10px 20px;
+          color: $white;
+          border: 1px dashed transparent;
+          cursor: pointer;
+
+          transition: 0.3s all;
+
+          &:hover {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #3dc06f, #11998e);
+            transform: scale(1.15);
+            border: 1px dashed transparent;
+          }
+          &:active {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #3dc06f, #11998e);
+            transform: scale(1);
+            border: 1px dashed transparent;
+          }
+        }
+        .selected-amount {
+          background: #11998e;
+          background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+          background: linear-gradient(to right, #3dc06f, #11998e);
+
+          transform: scale(1.05);
+        }
+        }
+
+      #withdrawaltypeskdjkslks {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        select {
+          background: $primary05;
+          padding: 10px;
+          border-radius: 10px;
+          @include font(16px);
+          font-weight: 600;
+          width: max-content;
+          transition: 0.3s all;
+          cursor: pointer;
+          background: #7f919e;
+          background: -webkit-linear-gradient(to right, #7f919e, #405367);
+          background: linear-gradient(to right, #d5e9f8, #afb7c2);
+
+          &:hover {
+            background: white;
+          }
+
+          &:focus-visible {
+            outline: none;
+            transform: scale(1.02);
+          }
+        }
+
+        button {
+          border: none;
+          padding: 10px;
+          @include font(16px);
+          border-radius: 10px;
+          cursor: pointer;
+          width: 200px;
+          transition: 0.3s all;
+          margin-left: 20px;
+
+          &:hover {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #3dc06f, #11998e);
+            transform: scale(1.05);
+            color: $white;
+            border: 1px dashed transparent;
+          }
+          &:active {
+            background: #11998e;
+            background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #3dc06f, #11998e);
+            transform: scale(1);
+            border: 1px dashed transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+#selecwithdrawaltype {
+  text-align: center;
+  margin-top: 10px;
+  .withdrawal-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+    @include mobile {
+      gap: 10px;
+    }
+    button {
+      border: none;
+    padding: 10px;
+    @include font(16px);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: 0.3s all;
+    border: 1px dashed transparent;
+      @include mobile {
+        width: 100%;
+        padding: 10px 5px;
+
+      }
+
+    &:hover {
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #3dc06f, #11998e);
+      transform: scale(1.05);
+      color: $white;
+      border: 1px dashed transparent;
+    }
+    &:active {
+      background: #11998e;
+      background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+      background: linear-gradient(to right, #3dc06f, #11998e);
+      transform: scale(1);
+      border: 1px dashed transparent;
+    }
+    }
+  }
+
+  .selected-amount-typewit {
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #3dc06f, #11998e);
+    transform: scale(1);
+    border: 1px dashed transparent;
+    color: $white;
+
+
+    
+  }
+}
+
+
+#custombutonskxiks4551 {
+  font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #3dc06f, #11998e);
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    transition: 0.3s all;
+    margin-top: 10px;
+    cursor: pointer;
+    width: fit-content;
+    opacity: .9;
+
+    &:hover {
+      transform: scale(1.02);
+      opacity: 1;
+    }
+}
