@@ -17,6 +17,7 @@ import LoginPopup from './LoginPopup';
 import { HideScrollOverflow } from '../../Utils/HideScrollOverflow';
 import { FcMenu } from 'react-icons/fc';
 import { SlMenu } from 'react-icons/sl';
+import TelegramIco01 from '../Chat&Whatsapp/TelegramIco01';
 
 
 
@@ -485,6 +486,7 @@ const Navbar = () => {
 
 
       <WhatsappIco01 />
+      <TelegramIco01 />
 
       {showLoginPopup && <LoginPopup popupchange={setShowSignupPopup} onClose={() => { setShowLoginPopup(false); HideScrollOverflow(false); }} />}
 {showSignupPopup && <SignupPopup popupchange={setShowLoginPopup} onClose={() => { setShowSignupPopup(false); HideScrollOverflow(false); }} />}
