@@ -182,7 +182,7 @@
       "id": 9912,
       "imageUrl": "/assets/SEVENMOJOS/AndarBahar.webp",
       "provider": "7mojosLogo",
-      "categories": ["All Games", "Trending Games", "AndarBahar", "Card Games"],
+      "categories": ["All Games", "Trending Games", "Andar Bahar", "Card Games"],
       "urlparam":   "ab-demo",
       "heading": "Andar Bahar"
     },
@@ -223,7 +223,7 @@
       "id": 998,
       "imageUrl": "/assets/SEVENMOJOS/DragonTigerIndStu.webp",
       "provider": "7mojosLogo",
-      "categories": ["All Games", "Trending Games", "DragonTiger", "Card Games"],
+      "categories": ["All Games", "Trending Games", "Dragon Tiger", "Card Games"],
       "urlparam": "dt-demo",
       "heading": "Dragon Tiger"
     },
@@ -232,7 +232,7 @@
       "id": 993,
       "imageUrl": "/assets/SEVENMOJOS/TeenPatti.webp",
       "provider": "7mojosLogo",
-      "categories": ["All Games", "Trending Games", "TeenPatti", "Card Games"],
+      "categories": ["All Games", "Trending Games", "Teen Patti", "Card Games"],
       "urlparam": "tp-demo",
       "heading": "Teen Patti"
     },
@@ -242,7 +242,7 @@
       "id": 9913,
       "imageUrl": "/assets/SEVENMOJOS/TeenPattiOff.webp",
       "provider": "7mojosLogo",
-      "categories": ["All Games", "TeenPatti", "Card Games"],
+      "categories": ["All Games", "Teen Patti", "Card Games"],
       "urlparam": "tpfo-demo",
       "heading": "Teen Patti Face Off"
     },

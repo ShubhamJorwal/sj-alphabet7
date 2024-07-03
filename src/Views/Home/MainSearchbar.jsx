@@ -184,10 +184,14 @@ const MainSearchbar = ({ handleSearchClick, showPopup, HideScrollOverflow, handl
                     </div>
                   ))
                 ) : (
-                  <div className="nosearchfoundx56434x">
+                    <>
+                    <div className="sdf2ds"></div>
+                    <div className="sdf2ds"></div>
+                    <div className="nosearchfoundx56434x">
                     <Lottie options={defaultOptions} height={180} width={180} />
                     <p className="appr2ve2k1nfoftheT2r4ned">No games found</p>
                   </div>
+                    </>
                 )}
               </div>
             </div>
@@ -199,3 +203,4 @@ const MainSearchbar = ({ handleSearchClick, showPopup, HideScrollOverflow, handl
 };
 
 export default MainSearchbar;
+
