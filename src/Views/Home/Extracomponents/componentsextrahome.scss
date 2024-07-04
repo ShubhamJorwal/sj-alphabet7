@@ -130,6 +130,7 @@ $shadow: rgba($yellow, 0.5);
     padding: 0;
     width: calc(100% - 20px);
     border-radius: 10px;
+    height: 400px;
   }
   video {
     width: 100%;
@@ -641,6 +642,10 @@ $shadow: rgba($yellow, 0.5);
     font-size: 20px;
     text-transform: uppercase;
     flex-basis: 34%;
+
+    @include mobile {
+      display: none;
+    }
     img {
       height: 25px;
     }
@@ -653,6 +658,10 @@ $shadow: rgba($yellow, 0.5);
 
     align-items: center;
     gap: 10px;
+
+    @include mobile {
+      flex-basis: 60%;
+    }
 
     p {
       padding: 5px 10px;
@@ -672,6 +681,10 @@ $shadow: rgba($yellow, 0.5);
       font-size: 14px;
       color: $white;
       transition: .1s all;
+
+      @include mobile {
+        display: none;
+      }
       &:focus-visible {
         outline: none;
         scale: 1.025;

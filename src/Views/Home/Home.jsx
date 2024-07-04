@@ -31,10 +31,12 @@ const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedComponent, setSelectedComponent] = useState("BetGames");
+  // const [selectedComponent, setSelectedComponent] = useState("BetGames");
+  const [selectedComponent, setSelectedComponent] = useState("7mojos");
 
   
   const [userData, setUserData] = useState(null);
+
 
 
   const fetchUserData = () => {
@@ -154,10 +156,10 @@ useEffect(() => {
 
   const dataArrayx2 = [
     { name: "All Games", logo: "/Logos/CompanyLogos/allgames.png" },
-    { name: "Ezugi", logo: "/Logos/CompanyLogos/ezugi.png" },
-    { name: "Evolution", logo: "/Logos/CompanyLogos/evolutoin.png" },
     { name: "7mojos", logo: "/Logos/CompanyLogos/7mojosLogo.png" },
     { name: "BetGames", logo: "/Logos/CompanyLogos/betgames.png" },
+    { name: "Ezugi", logo: "/Logos/CompanyLogos/ezugi.png" },
+    { name: "Evolution", logo: "/Logos/CompanyLogos/evolutoin.png" },
     { name: "Spribe", logo: "/Logos/CompanyLogos/Spribe.png" },
     { name: "netent", logo: "/Logos/CompanyLogos/netent.png" },
     { name: "redtigerlogo", logo: "/Logos/CompanyLogos/redtigerlogo.png" },
@@ -204,7 +206,7 @@ useEffect(() => {
       <div className="seclkx42">
           <span>
             <input readOnly type="text" placeholder="Search Games"  onClick={() => { handleSearchClick(true); HideScrollOverflow(true); } }/>
-            <img src="/Final_Assets/Icons/search.svg" alt="" />
+            <img src="/Final_Assets/Icons/search.svg" alt=""  onClick={() => { handleSearchClick(true); HideScrollOverflow(true); } }/>
           </span>
         </div>
 

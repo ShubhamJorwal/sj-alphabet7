@@ -26,6 +26,15 @@
   height: fit-content;
   animation: slideUp 0.5s ease-in-out forwards;
   box-shadow: rgba(255, 255, 255, 0.5) 0px 10px 80px -20px, rgba(255, 255, 255, 0.7) 0px 0px 40px -30px;
+
+
+  @include mobile {
+    width: calc(100% - 20px);    
+    min-width: unset;
+    max-width: 100%;
+    margin-top: -70px;
+
+  }
 }
 
 .close-button {

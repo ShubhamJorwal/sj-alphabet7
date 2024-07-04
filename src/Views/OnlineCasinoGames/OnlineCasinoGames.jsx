@@ -126,7 +126,7 @@ const OnlineCasinoGames = () => {
         <div id="s2conxjsk">
           <div className="searchbar">
             <IoSearchOutline />
-            <input type="text" placeholder="Search Games Here" onClick={() => { handleSearchClick(true); HideScrollOverflow(true); }} />
+            <input readOnly type="text" placeholder="Search Games Here" onClick={() => { handleSearchClick(true); HideScrollOverflow(true); }} />
           </div>
           <h3 id="s32h3sdl">Providers</h3>
           <ul>

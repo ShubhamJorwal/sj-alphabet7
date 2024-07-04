@@ -56,8 +56,16 @@
       font-size: 20px;
       text-transform: uppercase;
       margin-right: auto;
+      
+      @include mobile {
+        font-size: 16px;
+        gap: 5px;
+      }
       img {
         height: 25px;
+        @include mobile {
+         height: 20px;
+        }
       }
     }
     
@@ -218,7 +226,9 @@
         object-position: top;
         position: relative;
         height: 200px;
-
+        @include mobile {
+          height: 170px;
+        }
 
       }
 
@@ -361,6 +371,16 @@
   // padding-bottom: 5px;
   border-bottom: 1px solid $x2primary;
 
+  @include mobile {
+    overflow: auto;
+    width: calc(100% - 20px);
+    margin: 5px 10px 0 10px;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   .x155w6s156w {
     display: flex;
     align-items: center;
@@ -375,6 +395,11 @@
     &:hover  {
     border-bottom: 2px solid $LowopactiyPrimary;
     background: $x1primary;
+    }
+
+    @include mobile {
+      white-space: nowrap;
+  text-overflow: ellipsis;
     }
     img {
       height: 20px;

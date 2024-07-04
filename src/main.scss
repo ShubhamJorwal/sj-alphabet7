@@ -64,7 +64,9 @@ a {
   z-index: 99999;
   bottom: 10px;
   right: 00px;
-  
+  @include mobile {
+    bottom: 210px;
+  }
   .background {
   background-color: rgb(52, 20, 235);
   border-radius: 50%;
@@ -76,6 +78,7 @@ a {
   left: 10px;
   position: absolute;
   top: 10px;
+
   }
   
   .chat-bubble {
@@ -154,3 +157,13 @@ a {
 
 
 
+
+
+
+.x585w65465sd4f65sd {
+  height: 60px;
+  @include mobile {
+    display: block;
+    
+  }
+}

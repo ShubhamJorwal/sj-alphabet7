@@ -105,7 +105,7 @@
         border: none;
         transition: .3s all;
         @include mobile {
-          padding: 8px 15px;
+          width: max-content;
         }
 
         &:hover {
@@ -843,6 +843,7 @@
     justify-content: space-between;
     gap: 10px;
 
+    background: $primary06;
   }
 
 }
@@ -852,15 +853,21 @@
   gap: 5px;
   justify-content: center;
   align-items: center;
+  @include mobile {
+    gap: 2px;
+  }
   svg {
-    color: $primary08;
+    color: $wtext;
     width: 25px;
+    height: 25px;
+  }
+  img {
     height: 25px;
   }
   p {
     font-weight: 700;
     font-size: 14px;
-    color: $primary08;
+    color: $wtext;
   }
 }
 

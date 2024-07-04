@@ -23,6 +23,12 @@
   margin-bottom: 10px;
   border-radius: 10px;
 
+  @include mobile {
+    width: calc(100% - 20px);
+    margin: 5px 10px;
+    gap: 5px;
+  }
+
   .seclkx41 {
     display: flex;
     align-items: center;
@@ -34,8 +40,8 @@
     }
 
     @include mobile {
-      overflow: scroll;
-      padding: 10px 10px;
+      overflow-x: hidden;
+      width: 230px;
 
       &::-webkit-scrollbar {
         display: none;
@@ -74,6 +80,10 @@
           // padding-right: 120px;
           box-shadow: rgba(100, 100, 111, 0.6) 0px 0px 12px 0px;
         }
+
+        @include mobile {
+          display: none;
+        }
       }
 
       img {
@@ -81,6 +91,15 @@
         margin-bottom: 4px;
         position: absolute;
         height: 15px;
+        @include mobile {
+          right: 0px;
+          background: $x1primary;
+          padding: 5px;
+          border-radius: 10px;
+          height: 30px;
+          margin-bottom: 0px;
+
+        }
       }
     }
   }
@@ -96,9 +115,16 @@
     // background: $primary03;
     // background: $x2primary;
 
+    @include mobile {
+      padding: 5px 10px;
+    }
+
     img {
       // height: 30px;
       height: 17px;
+      @include mobile {
+        height: 14px;
+      }
     }
     &:hover {
       background: $primary04;
