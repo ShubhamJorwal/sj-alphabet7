@@ -103,7 +103,7 @@
         // font-weight: 600;
         width: 80px;
         border: none;
-        transition: .3s all;
+        transition: 0.3s all;
         @include mobile {
           width: max-content;
         }
@@ -112,9 +112,8 @@
           // border: 1px solid $white;
         }
         &:active {
-          transform: scale(.95);
+          transform: scale(0.95);
         }
-
       }
     }
     .loginbuttonnavsxkk {
@@ -170,7 +169,6 @@
   .lksdjclksfd4w {
     height: 60px;
   }
-
 
   .wrapper .logo a {
     display: flex;
@@ -352,6 +350,18 @@
           ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
       }
+    }
+  }
+
+  .sc54werw2deposits {
+    display: none;
+    align-items: center;
+    padding-right: 5px;
+    @include mobile {
+      display: flex;
+    }
+    img {
+      height: 30px;
     }
   }
   .nav-links li:hover .drop-menu,
@@ -587,24 +597,24 @@
 #buttonxs525skkl {
   align-items: center;
   display: flex;
-  
+
   a {
     background: $primary07;
-    @include flex(center,center);
+    @include flex(center, center);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 15px;
     height: 30px;
     color: $white;
     // font-weight: 600;
-    transition: .3s all;
+    transition: 0.3s all;
     &:hover {
       background: $primary;
       color: $black;
     }
 
     &:active {
-      transform: scale(.95);
+      transform: scale(0.95);
     }
   }
   @include mobile {
@@ -632,7 +642,7 @@
   position: relative;
   @include mobile {
     width: fit-content;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   a {
@@ -774,57 +784,16 @@
     display: none;
   }
   &:hover {
-          background: $lightgray !important;
+    background: $lightgray !important;
     // background-image: url(https://mediumrare.imgix.net/casino-poker-cards-green-en.jpg?auto=format&w=78) !important;
   }
 
   &:active {
-    transform: scale(.95);
+    transform: scale(0.95);
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// sidebar of mobile 
+// sidebar of mobile
 
 .bottombarx5s36 {
   position: fixed;
@@ -835,7 +804,7 @@
   width: 100%;
   padding: 7px 20px;
   // primary08
-  box-shadow: 0 0 10px rgba(65, 65, 65, 0.2),0 0 40px #575757;
+  box-shadow: 0 0 10px rgba(65, 65, 65, 0.2), 0 0 40px #575757;
   @include mobile {
     display: unset;
     display: flex;
@@ -846,7 +815,6 @@
     padding-right: 100px;
     background: $primary06;
   }
-
 }
 .mbsidbarnavx4s-menu-button {
   display: flex;
@@ -878,11 +846,54 @@
   left: -80%;
   width: 80%;
   height: 100%;
-  background-color: #333;
+  background: $primary06;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   transition: left 0.3s ease;
   z-index: 999;
+
+  .contentx5we5we {
+    padding: 0 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    gap: 10px;
+    .logosectioncs4565w {
+      margin-bottom: 10px;
+      img {
+        width: 140px;
+      }
+    }
+
+    // .cx4ws5w5e {
+    //   display: flex;
+    //   align-items: center;
+    //   gap: 10px;
+    //   width: 100%;
+    //   flex-direction: column;
+    //   .xs85w85we4r56sed546 {
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 10px;
+    //     background: $x1primary;
+    //     padding: 8px 15px;
+    //     // border-radius: 10px;
+    //     width: 100%;
+    //     cursor: pointer;
+    //     &:hover {
+    //       background: $x3primary;
+    //     }
+    //     img {
+    //       height: 25px;
+    //     }
+    //   }
+    // }
+
+    .xw8954sd85565sd {
+    }
+  }
 }
 
 .mbsidbarnavx4s-sidebar.open {
@@ -890,25 +901,23 @@
 }
 
 .mbsidbarnavx4s-close-button {
-  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
   border: none;
-  color: white;
-  font-size: 24px;
   cursor: pointer;
-}
-
-.mbsidbarnavx4s-sidebar-links {
-  list-style-type: none;
-  padding: 0;
-}
-
-.mbsidbarnavx4s-sidebar-links li {
-  margin: 20px 0;
-}
-
-.mbsidbarnavx4s-sidebar-links li a {
-  color: white;
-  text-decoration: none;
+  svg {
+    color: $white;
+    width: 35px;
+    height: 35px;
+    background: $x1primary;
+    padding: 5px;
+    border-radius: 10px;
+    &:hover {
+      background: $x3primary;
+    }
+  }
 }
 
 .mbsidbarnavx4s-overlay {
@@ -928,26 +937,3 @@
   opacity: 1;
   visibility: visible;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
