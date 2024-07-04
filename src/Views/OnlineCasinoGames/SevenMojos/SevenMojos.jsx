@@ -5,6 +5,7 @@ const SevenMojos = ({ GameId }) => {
   const playerToken = 'ise9123s12'; // Example player token, handle securely
   const operatorToken = '654be709f71140f7aa65dcd8cede80d4'; // Example operator token, handle securely
 
+  
   const [gameUrl, setGameUrl] = useState('');
 
   useEffect(() => {
