@@ -937,3 +937,23 @@
   opacity: 1;
   visibility: visible;
 }
+
+
+.logoutbtnxslkw4s {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid $x1primary;
+  margin: 20px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background: rgb(197, 0, 0);
+
+  &:hover {
+    background: $x3primary;
+  }
+  img {
+    height: 16px;
+  }
+}

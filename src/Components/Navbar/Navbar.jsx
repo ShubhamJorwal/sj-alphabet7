@@ -583,7 +583,7 @@ const Navbar = () => {
 
           {/* </div> */}
             <MobileAccountTop />
-
+              <div  onClick={clearLocalStorageAndReload} className="logoutbtnxslkw4s"><img src="/Final_Assets/Icons/logoutckw4sIcon.svg" alt="" />Logout</div>
           <div className="xw8954sd85565sd">
               <VoiceInput/>
           </div>
