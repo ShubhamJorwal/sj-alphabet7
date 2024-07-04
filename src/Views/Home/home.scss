@@ -27,6 +27,13 @@
     width: calc(100% - 20px);
     margin: 5px 10px;
     gap: 5px;
+    padding: 10px;
+    padding-right: 10px;
+    // overflow: auto;
+    // overflow-y: hidden;
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
   }
 
   .seclkx41 {
@@ -40,9 +47,10 @@
     }
 
     @include mobile {
-      overflow-x: hidden;
+      overflow-y: hidden;
       width: 230px;
-
+      width: 100%;
+      padding-right: 30px;
       &::-webkit-scrollbar {
         display: none;
       }
@@ -55,7 +63,10 @@
       background: transparent;
       display: flex;
       align-items: center;
-
+      @include mobile {
+        position: absolute;
+        right: 7px;
+      }
       input {
         border: none;
         // border: 1px solid $stroke;
@@ -98,6 +109,8 @@
           border-radius: 10px;
           height: 30px;
           margin-bottom: 0px;
+          background-color: $primary02;
+          box-shadow: rgba(255, 255, 255, 0.3) 0px 0px 40px;
 
         }
       }
@@ -117,13 +130,14 @@
 
     @include mobile {
       padding: 5px 10px;
+      
     }
 
     img {
       // height: 30px;
       height: 17px;
       @include mobile {
-        height: 14px;
+        height: 15px;
       }
     }
     &:hover {
@@ -150,9 +164,14 @@
 .seclkx41-navigation {
   display: flex;
   align-items: center;
+  @include mobile {
+    // flex-basis: 70%;
+    overflow: hidden;
+  }
 }
 
 .seclkx41-navigation {
+
   button {
     border: none;
     // padding: 2px;
@@ -161,6 +180,10 @@
     background: transparent;
     display: flex;
     align-items: center;
+    
+  @include mobile {
+    display: none;
+  }
     svg {
       background-color: $x2primary;
       color: $white;

@@ -187,6 +187,12 @@ const Navbar = () => {
         <div className="bottombarx5s36">
 
         
+        <Link to={"/"} className="mbsidbarnavx4s-menu-button">
+        <img src="/Final_Assets/Icons/homeicon.svg" alt="" />
+          <p>Home</p>
+        </Link>
+
+        
         <Link to={"/online-casino-games/BetGames"} className="mbsidbarnavx4s-menu-button">
         <img src="/Final_Assets/Icons/casinoico1.svg" alt="" />
           <p>Casino</p>

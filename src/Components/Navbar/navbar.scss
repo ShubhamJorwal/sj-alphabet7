@@ -841,6 +841,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    justify-content: space-around;
     gap: 10px;
 
     background: $primary06;
@@ -858,11 +859,11 @@
   }
   svg {
     color: $wtext;
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
   }
   img {
-    height: 25px;
+    height: 22px;
   }
   p {
     font-weight: 700;
