@@ -164,7 +164,7 @@
     // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
     @include mobile {
-      padding: 0px 5px 0 5px;
+      padding: 0px 5px 0 10px;
     }
   }
   .lksdjclksfd4w {
@@ -841,9 +841,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    justify-content: space-around;
+    // justify-content: space-around;
     gap: 10px;
-
+    padding-right: 100px;
     background: $primary06;
   }
 
