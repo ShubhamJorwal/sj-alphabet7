@@ -2,7 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Loader03 from '../../../Components/Loaders/Loader03';
 
 const SevenMojos = ({ GameId }) => {
-  const playerToken = 'ise9123s12'; // Example player token, handle securely
+
+  const storedUserData = localStorage.getItem('user');
+  let userData = {};
+
+  if (storedUserData) {
+    userData = JSON.parse(storedUserData);
+  } else {
+    userData.token = "-";
+    localStorage.setItem('user', JSON.stringify(userData));
+  }
+
+
+
+  const playerToken = userData.token;
   // const operatorToken = '654be709f71140f7aa65dcd8cede80d4';
   const operatorToken = 'Fz7tM7xNpfEAm7mHfWzHLatPjGcnOLA8'; 
 
