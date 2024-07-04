@@ -3,7 +3,8 @@ import Loader03 from '../../../Components/Loaders/Loader03';
 
 const SevenMojos = ({ GameId }) => {
   const playerToken = 'ise9123s12'; // Example player token, handle securely
-  const operatorToken = '654be709f71140f7aa65dcd8cede80d4'; // Example operator token, handle securely
+  const operatorToken = '654be709f71140f7aa65dcd8cede80d4';
+  // const operatorToken = 'Fz7tM7xNpfEAm7mHfWzHLatPjGcnOLA8'; 
 
   
   const [gameUrl, setGameUrl] = useState('');
@@ -11,14 +12,19 @@ const SevenMojos = ({ GameId }) => {
   useEffect(() => {
     if (playerToken && operatorToken && GameId) {
       const baseUrl = 'https://demo-games.7mojos.com';
+      // const baseUrl = 'https://de-clb.svmsrv.com';
       const params = new URLSearchParams({
-        gameToken: GameId,
         playerToken,
         operatorToken,
         language: 'en',
+
+        gameToken: GameId,
         allowDesktopFullscreen: 'true',
         allowMobileFullscreen: 'true',
-        enableRefresh: 'true',
+        // play: 'https://de-cgm.svmsrv.com/live/3/?host=https%3A%2F%2Fde-lce.svmsrv.com&gameToken=rl-3&playerToken=006cfd39-63fa-488f-b377-1ecb404022c3&operatorToken=3482701c311a4777b9118448e94ed14d%23jsk&language=en&allowDesktopFullscreen=true&allowMobileFullscreen=true&enableRefresh=false&behavior=532&bridgeUrl=https%3A%2F%2Fde-rs.svmsrv.com%2Fbridges%2F7mojos%2Fbridge.js',
+        // bridgeUrl: 'https%3A%2F%2Fde-rs.svmsrv.com%2Fbridges%2F7mojos%2Fbridge.js',
+
+        enableRefresh: 'false',
       });
 
       setGameUrl(`${baseUrl}?${params.toString()}`);
