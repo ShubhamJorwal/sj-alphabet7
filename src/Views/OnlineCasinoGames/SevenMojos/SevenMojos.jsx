@@ -3,8 +3,8 @@ import Loader03 from '../../../Components/Loaders/Loader03';
 
 const SevenMojos = ({ GameId }) => {
   const playerToken = 'ise9123s12'; // Example player token, handle securely
-  const operatorToken = '654be709f71140f7aa65dcd8cede80d4';
-  // const operatorToken = 'Fz7tM7xNpfEAm7mHfWzHLatPjGcnOLA8'; 
+  // const operatorToken = '654be709f71140f7aa65dcd8cede80d4';
+  const operatorToken = 'Fz7tM7xNpfEAm7mHfWzHLatPjGcnOLA8'; 
 
   
   const [gameUrl, setGameUrl] = useState('');
