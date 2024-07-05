@@ -18,13 +18,13 @@ const SignupPopup = ({ onClose,popupchange }) => {
   
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [phoneCode, setPhoneCode] = useState('+91');
+  const [phoneCode, setPhoneCode] = useState('91');
   const [mobile, setMobile] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [referrerCode, setReferrerCode] = useState(refer_id);
-  const [currency, setCurrency] = useState('inr');
+  const [currency, setCurrency] = useState('INR');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otpValidationSuccess, setOtpValidationSuccess] = useState(false);
@@ -34,6 +34,7 @@ const SignupPopup = ({ onClose,popupchange }) => {
   const [loading, setLoading] = useState(true);
 
 
+  const [orderId, setOrderId] = useState('');
 
 
 
@@ -71,95 +72,76 @@ const SignupPopup = ({ onClose,popupchange }) => {
         currency,
       });
       console.log('Registration response:', registrationResponse.data);
-      
-
-
-     
-      await axios.post(`${apiUrl}/mobile-get-otp`, {
+  
+      const otpResponse = await axios.post(`${apiUrl}/mobile-get-otp`, {
         mobile: `${phoneCode}${mobile}`
       });
-
-      if(registrationResponse.data.error === true) {
+  
+      if (registrationResponse.data.error === true) {
         setLoading(false);
         toast.error(registrationResponse.data.message)
       } else {
-
         setOtpSent(true);
         setLoading(false);
         setOtpResendTimeout(true);
         toast.success('Registration successful! OTP sent.');
       }
-        
-
+      
+      setOrderId(otpResponse.data.orderId);
+  
     } catch (error) {
       console.error('Error during registration:', error);
       toast.error(error.response?.data?.message || 'Error during registration');
     }
   };
-
+  
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(`${apiUrl}/validate-otp`, {
         mobile: `${phoneCode}${mobile}`,
-        otp: otp
+        otp: otp,
+        orderId: orderId
       });
       // Handle success response
       if (response.data.error === true) {
-        // toast.error('OTP validation response:', response.data);        
         console.log("Everything is alright don't worry.")
         console.log(response.data)
       } else {
         setOtpValidationSuccess(true);
         console.log(response.data)
-        // toast.success()
       }
-      // No need to display success message here
-
-
-      const {
-         access_token, 
-        token, result } = response.data;
-
-
-        const userData = {
-          access_token: token,
-          token:response.data.result.token,
-          new_token: result.new_token,
-          user_id: result.id,
-          unique_id: result.unique_id,
-          name:result.name,
-          first_name: result.first_name,
-          last_name: result.last_name
-        };
-
-        const expirationTime = 24 * 60 * 60 * 1000 
-        const expirationDate = new Date().getTime() + expirationTime;
-        localStorage.setItem('user', JSON.stringify(userData)); 
-        localStorage.setItem('expirationDate', expirationDate);
-        
-        setTimeout(() => {
-          localStorage.removeItem('user'); 
-          localStorage.removeItem('expirationDate');
-          toast.info('User data removed due to expiration.');
-        }, expirationTime);
-        
   
-        toast.success('Registered successful!');
-        // setTimeout(() => {
-        //   Navigate("/")
-        // }, 1000);
-        setTimeout(() => {
-          window.location.reload(); // Refresh the page
-        }, 500);
-
-
-
-
+      const { access_token, token, result } = response.data;
+  
+      const userData = {
+        access_token: token,
+        token: response.data.result.token,
+        new_token: result.new_token,
+        user_id: result.id,
+        unique_id: result.unique_id,
+        name: result.name,
+        first_name: result.first_name,
+        last_name: result.last_name
+      };
+  
+      const expirationTime = 24 * 60 * 60 * 1000 
+      const expirationDate = new Date().getTime() + expirationTime;
+      localStorage.setItem('user', JSON.stringify(userData)); 
+      localStorage.setItem('expirationDate', expirationDate);
       
+      setTimeout(() => {
+        localStorage.removeItem('user'); 
+        localStorage.removeItem('expirationDate');
+        toast.info('User data removed due to expiration.');
+      }, expirationTime);
+  
+      toast.success('Registered successful!');
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     } catch (error) {
       console.error('Error during OTP validation:', error);
-      // Handle error
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
       } else {

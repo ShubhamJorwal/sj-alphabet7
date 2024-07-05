@@ -16,13 +16,13 @@
     
 //     const [name, setName] = useState('');
 //     const [password, setPassword] = useState('');
-//     const [phoneCode, setPhoneCode] = useState('+91');
+//     const [phoneCode, setPhoneCode] = useState('91');
 //     const [mobile, setMobile] = useState('');
 //     const [firstName, setFirstName] = useState('');
 //     const [lastName, setLastName] = useState('');
 //     const [email, setEmail] = useState('');
 //     const [referrerCode, setReferrerCode] = useState(refer_id);
-//     const [currency, setCurrency] = useState('inr');
+//     const [currency, setCurrency] = useState('INR');
 //     const [otp, setOtp] = useState('');
 //     const [otpSent, setOtpSent] = useState(false);
 //     const [otpValidationSuccess, setOtpValidationSuccess] = useState(false);
@@ -340,13 +340,13 @@ const RegistrationComponent = () => {
   
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [phoneCode, setPhoneCode] = useState('+91');
+  const [phoneCode, setPhoneCode] = useState('91');
   const [mobile, setMobile] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [referrerCode, setReferrerCode] = useState(refer_id);
-  const [currency, setCurrency] = useState('inr');
+  const [currency, setCurrency] = useState('INR');
   const [otp, setOtp] = useState('');
   const [otpSent, setOtpSent] = useState(false);
   const [otpValidationSuccess, setOtpValidationSuccess] = useState(false);
@@ -354,6 +354,7 @@ const RegistrationComponent = () => {
   const [resendTimer, setResendTimer] = useState(60);
   
   const [loading, setLoading] = useState(true);
+  const [orderId, setOrderId] = useState('');
 
 
 
@@ -393,92 +394,76 @@ const RegistrationComponent = () => {
         currency,
       });
       console.log('Registration response:', registrationResponse.data);
-      
-
-
-     
+  
       await axios.post(`${apiUrl}/mobile-get-otp`, {
         mobile: `${phoneCode}${mobile}`
       });
-
-      if(registrationResponse.data.error === true) {
+  
+      if (registrationResponse.data.error === true) {
         setLoading(false);
-        toast.error(registrationResponse.data.message)
+        toast.error(registrationResponse.data.message);
       } else {
-
         setOtpSent(true);
         setLoading(false);
         setOtpResendTimeout(true);
         toast.success('Registration successful! OTP sent.');
+        setOrderId(registrationResponse.data.order_id); // Save the order ID
       }
-        
-
     } catch (error) {
       console.error('Error during registration:', error);
       toast.error(error.response?.data?.message || 'Error during registration');
     }
   };
-
+  
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(`${apiUrl}/validate-otp`, {
         mobile: `${phoneCode}${mobile}`,
-        otp: otp
+        otp: otp,
+        order_id: orderId // Pass the order ID
       });
       // Handle success response
       if (response.data.error === true) {
-        // toast.error('OTP validation response:', response.data);        
-        console.log("Everything is alright don't worry.")
-        console.log(response.data)
+        console.log("Everything is alright don't worry.");
+        console.log(response.data);
       } else {
         setOtpValidationSuccess(true);
-        console.log(response.data)
-        // toast.success()
+        console.log(response.data);
       }
-      // No need to display success message here
-
-
-      const {
-         access_token, 
-        token, result } = response.data;
-
-
-        const userData = {
-          access_token: token,
-          token:response.data.result.token,
-          new_token: result.new_token,
-          user_id: result.id,
-          unique_id: result.unique_id,
-          name:result.name,
-          first_name: result.first_name,
-          last_name: result.last_name
-        };
-
-        const expirationTime = 24 * 60 * 60 * 1000 
-        const expirationDate = new Date().getTime() + expirationTime;
-        localStorage.setItem('user', JSON.stringify(userData)); 
-        localStorage.setItem('expirationDate', expirationDate);
-        
-        setTimeout(() => {
-          localStorage.removeItem('user'); 
-          localStorage.removeItem('expirationDate');
-          toast.info('User data removed due to expiration.');
-        }, expirationTime);
-        
   
-        toast.success('Registered successful!');
-        setTimeout(() => {
-          Navigate("/")
-        }, 1000);
-
-
-
-
-      
+      const {
+        access_token,
+        token, result } = response.data;
+  
+      const userData = {
+        access_token: token,
+        token: response.data.result.token,
+        new_token: result.new_token,
+        user_id: result.id,
+        unique_id: result.unique_id,
+        name: result.name,
+        first_name: result.first_name,
+        last_name: result.last_name
+      };
+  
+      const expirationTime = 24 * 60 * 60 * 1000;
+      const expirationDate = new Date().getTime() + expirationTime;
+      localStorage.setItem('user', JSON.stringify(userData));
+      localStorage.setItem('expirationDate', expirationDate);
+  
+      setTimeout(() => {
+        localStorage.removeItem('user');
+        localStorage.removeItem('expirationDate');
+        toast.info('User data removed due to expiration.');
+      }, expirationTime);
+  
+      toast.success('Registered successful!');
+      setTimeout(() => {
+        Navigate("/");
+      }, 1000);
     } catch (error) {
       console.error('Error during OTP validation:', error);
-      // Handle error
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
       } else {

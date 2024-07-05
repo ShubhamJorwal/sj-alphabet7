@@ -19,6 +19,8 @@ const LoginPopup = ({ onClose, popupchange }) => {
   const [otpResendTimeout, setOtpResendTimeout] = useState(false);
   const [isOtpLogin, setIsOtpLogin] = useState(false);
   const [timer, setTimer] = useState(0);
+  const [orderId, setOrderId] = useState('');
+
 
   useEffect(() => {
     let countdown;
@@ -60,72 +62,84 @@ const LoginPopup = ({ onClose, popupchange }) => {
       toast.error('You must be 18 years or older to log in.');
       return;
     }
-    try {
-      const response = await axios.post(`${apiUrl}/login`, formData);
-      const { access_token, token, result } = response.data;
-      const userData = {
-        access_token,
-        token,
-        new_token: result.new_token,
-        user_id: result.id,
-        unique_id: result.unique_id,
-        name: result.name,
-        first_name: result.first_name,
-        last_name: result.last_name
-      };
-      setLoading(false);
-      const expirationTime = rememberMe ? 7 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000;
-      const expirationDate = new Date().getTime() + expirationTime;
-      localStorage.setItem('user', JSON.stringify(userData));
-      localStorage.setItem('expirationDate', expirationDate);
-      toast.success('Login successful!');
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
-      setTimeout(() => {
-        localStorage.removeItem('user');
-        localStorage.removeItem('expirationDate');
-        toast.info('User data removed due to expiration.');
-      }, expirationTime);
-    } catch (error) {
-      toast.error('Login failed. Please check your credentials.');
+
+
+    let loginData;
+    if (/^\d{10}$/.test(formData.name)) {
+      // If 10 digits, assume it's a mobile number, add '91' prefix
+      loginData = { mobile: `91${formData.name}`, password: formData.password };
+    } else {
+      // Otherwise, treat it as a username
+      loginData = formData;
     }
-  };
+
+
+    try {
+    const response = await axios.post(`${apiUrl}/login`, loginData);
+    const { access_token, token, result } = response.data;
+    const userData = {
+      access_token,
+      token,
+      new_token: result.new_token,
+      user_id: result.id,
+      unique_id: result.unique_id,
+      name: result.name,
+      first_name: result.first_name,
+      last_name: result.last_name
+    };
+    setLoading(false);
+    const expirationTime = rememberMe ? 7 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000;
+    const expirationDate = new Date().getTime() + expirationTime;
+    localStorage.setItem('user', JSON.stringify(userData));
+    localStorage.setItem('expirationDate', expirationDate);
+    toast.success('Login successful!');
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
+    setTimeout(() => {
+      localStorage.removeItem('user');
+      localStorage.removeItem('expirationDate');
+      toast.info('User data removed due to expiration.');
+    }, expirationTime);
+  } catch (error) {
+    toast.error('Login failed. Please check your credentials.');
+  }
+};
 
   const handleSendOtp = async () => {
     if (mobile.length === 10) {
-      setMobile(`+91${mobile}`);
+      setMobile(`91${mobile}`);
     }
     try {
-      await axios.post(`${apiUrl}/login-with-otp`, { mobile: mobile.startsWith('+91') ? mobile : `+91${mobile}` });
+      const otpResponse = await axios.post(`${apiUrl}/login-with-otp`, { mobile: mobile.startsWith('91') ? mobile : `91${mobile}` });
       setOtpSent(true);
       setOtpResendTimeout(true);
       toast.success('OTP sent successfully!');
+      setOrderId(otpResponse.data.orderId);
     } catch (error) {
       console.error('Error during OTP sending:', error);
       toast.error(error.response?.data?.message || 'Error during OTP sending');
     }
   };
   
-
   const handleResendOtp = async () => {
     if (!otpResendTimeout) {
       try {
-        await axios.post(`${apiUrl}/login-with-otp`, { mobile });
+        const otpResponse = await axios.post(`${apiUrl}/login-with-otp`, { mobile });
         setOtpSent(true);
         setOtpResendTimeout(true);
         toast.success('OTP resent successfully!');
+        setOrderId(otpResponse.data.orderId);
       } catch (error) {
         console.error('Error during OTP resend:', error);
         toast.error(error.response?.data?.message || 'Error during OTP resend');
       }
     }
   };
-
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${apiUrl}/validate-otp`, { mobile, otp });
+      const response = await axios.post(`${apiUrl}/validate-otp`, { mobile, otp, orderId });
       const { access_token, token, result } = response.data;
       const userData = {
         access_token,

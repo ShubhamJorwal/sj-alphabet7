@@ -1,48 +1,120 @@
-import React, { useEffect } from 'react';
+import React from 'react'
 
 const Asd = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.id = 'otpless-sdk';
-    script.type = 'text/javascript';
-    script.src = 'https://otpless.com/v2/auth.js';
-    script.dataset.appid = 'ZHG4C7EH5807TRPKLYMI';
-    document.body.appendChild(script);
-
-    window.otpless = async (otplessUser) => {
-      try {
-        const userResponse = await authenticateUser(otplessUser);
-        console.log('User authenticated:', userResponse);
-        // Redirect user or update UI as needed
-      } catch (error) {
-        console.error('Authentication failed:', error);
-      }
-    };
-
-    return () => {
-      document.body.removeChild(script);
-      delete window.otpless;
-    };
-  }, []);
-
-  const authenticateUser = async (user) => {
-    // Example function to handle user authentication
-    const response = await fetch('/api/authenticate', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    });
-    return response.json();
-  };
-
-  return <div id="otpless-login-page"></div>;
-};
-
-
+  return (
+    <div>
+      
+    </div>
+  )
+}
 
 export default Asd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useEffect } from 'react';
+
+// const Asd = () => {
+//   useEffect(() => {
+//     const script = document.createElement('script');
+//     script.id = 'otpless-sdk';
+//     script.type = 'text/javascript';
+//     script.src = 'https://otpless.com/v2/auth.js';
+//     script.dataset.appid = 'ZHG4C7EH5807TRPKLYMI';
+//     document.body.appendChild(script);
+
+//     window.otpless = async (otplessUser) => {
+//       try {
+//         const userResponse = await authenticateUser(otplessUser);
+//         console.log('User authenticated:', userResponse);
+//         // Redirect user or update UI as needed
+//       } catch (error) {
+//         console.error('Authentication failed:', error);
+//       }
+//     };
+
+//     return () => {
+//       document.body.removeChild(script);
+//       delete window.otpless;
+//     };
+//   }, []);
+
+//   const authenticateUser = async (user) => {
+//     // Example function to handle user authentication
+//     const response = await fetch('/api/authenticate', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(user),
+//     });
+//     return response.json();
+//   };
+
+//   return <div id="otpless-login-page"></div>;
+// };
+
+
+
+// export default Asd
 
 
 
