@@ -67,7 +67,7 @@ const LoginPopup = ({ onClose, popupchange }) => {
     let loginData;
     if (/^\d{10}$/.test(formData.name)) {
       // If 10 digits, assume it's a mobile number, add '91' prefix
-      loginData = { mobile: `91${formData.name}`, password: formData.password };
+      loginData = { name: `91${formData.name}`, password: formData.password };
     } else {
       // Otherwise, treat it as a username
       loginData = formData;

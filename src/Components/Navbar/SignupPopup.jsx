@@ -153,11 +153,20 @@ const SignupPopup = ({ onClose,popupchange }) => {
 
   const handleResendOtp = async () => {
     try {
-      await axios.post(`${apiUrl}/mobile-get-otp`, {
+      // await axios.post(`${apiUrl}/mobile-get-otp`, {
+      //   mobile: `${phoneCode}${mobile}`
+      // });
+
+
+      const otpResponsex2 = await axios.post(`${apiUrl}/mobile-get-otp`, {
         mobile: `${phoneCode}${mobile}`
       });
+
+      
       setOtpSent(true);
       setOtpResendTimeout(true);
+      
+      setOrderId(otpResponsex2.data.orderId);
       toast.success('OTP resent successfully!');
 
       
