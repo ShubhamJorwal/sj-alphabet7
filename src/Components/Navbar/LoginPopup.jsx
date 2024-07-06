@@ -136,20 +136,24 @@ const LoginPopup = ({ onClose, popupchange }) => {
       }
     }
   };
+
+
+
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(`${apiUrl}/validate-otp`, { mobile, otp, orderId });
       const { access_token, token, result } = response.data;
       const userData = {
-        access_token,
-        token,
-        new_token: result.new_token,
-        user_id: result.id,
-        unique_id: result.unique_id,
-        name: result.name,
-        first_name: result.first_name,
-        last_name: result.last_name
+      access_token: token,
+      token: result.token,
+      new_token: result.new_token,
+      user_id: result.id,
+      unique_id: result.unique_id,
+      name: result.name,
+      first_name: result.first_name,
+      last_name: result.last_name
+
       };
       setLoading(false);
       const expirationTime = rememberMe ? 7 * 24 * 60 * 60 * 1000 : 24 * 60 * 60 * 1000;
