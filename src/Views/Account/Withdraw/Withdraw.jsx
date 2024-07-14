@@ -199,8 +199,7 @@ const calculateWithdrawalAmount = (amount, withdrawalType) => {
             </div>
           </div>
 
-
-          {userDatxssdfdsa && userDatxssdfdsa?.result?.status === "Confirmed" ? 
+ 
           <div id="blowstonwithdm">
         <h2>Select Bank to Withdraw Money</h2>
            {isLoading ? (
@@ -328,23 +327,8 @@ const calculateWithdrawalAmount = (amount, withdrawalType) => {
           </div>
           </div>
 
-          : <>
-          <div id="pendingksyksld">
-            <img src="/Logos/rejectedkyclogo.png" alt="" />
-            <div>
-            <p>Your KYC is not completed. Please try complete your kyc to withdraw amount.</p>
-            <Link to={"/player/kyc-verification"}>Kyc Verification</Link>
-            </div>
-
-          </div>
-          <div id="x2s558e2233s">
-<p>Minimum withdrawal amount is 100rs</p>
-            <p>If you choose instant withdrawal, you'll be charged a 5% fee, and the funds will be transferred to your wallet within 1 minute to 1 hour.</p>
-  <p>If you choose normal withdrawal, the service charge will be lower than for instant withdrawal, and the funds will be added to your wallet in 1-2 days or 10 hours.</p>
-
-          </div>
-          </>
-}
+         
+         
         </div>
         <div id="pfcplx2">
           <Addsection01 />

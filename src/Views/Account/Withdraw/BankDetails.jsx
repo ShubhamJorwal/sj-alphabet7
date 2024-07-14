@@ -170,8 +170,8 @@ const BankDetails = () => {
   return (
     <>
       <Navbar />
-      <AccountNavtop />
       <div id="profilesecmainacpl">
+      <AccountNavtop />
         <div id="pfcplx1">
           <div id="locapthnavtolf">
             <div id="lfo1">

@@ -34,7 +34,7 @@ const AccountNavtop = ({ activeLink }) => {
         <ul className={`alphx5w-dropdown-menu ${activeMenu === 'dropdown1' ? 'active' : ''} ${(activeLink === 'Profile' || activeLink === 'Change_password' || activeLink === 'Kyc_Verification') ? 'active' : ''}`}>
           <Link to="/player/profile" className={`alphx5w-dropdown-item ${activeLink === 'Profile' ? 'activelink' : ''}`}>Profile Info</Link>
           <Link to="/player/change-password" className={`alphx5w-dropdown-item ${activeLink === 'Change_password' ? 'activelink' : ''}`}>Change Password</Link>
-          <Link to="/player/kyc-verification" className={`alphx5w-dropdown-item ${activeLink === 'Kyc_Verification' ? 'activelink' : ''}`}>KYC Verification</Link>
+          {/* <Link to="/player/kyc-verification" className={`alphx5w-dropdown-item ${activeLink === 'Kyc_Verification' ? 'activelink' : ''}`}>KYC Verification</Link> */}
         </ul>
 
         <li 
