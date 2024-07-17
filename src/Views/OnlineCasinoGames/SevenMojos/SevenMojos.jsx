@@ -37,7 +37,7 @@ const SevenMojos = ({ GameId }) => {
         // play: 'https://de-cgm.svmsrv.com/live/3/?host=https%3A%2F%2Fde-lce.svmsrv.com&gameToken=rl-3&playerToken=006cfd39-63fa-488f-b377-1ecb404022c3&operatorToken=3482701c311a4777b9118448e94ed14d%23jsk&language=en&allowDesktopFullscreen=true&allowMobileFullscreen=true&enableRefresh=false&behavior=532&bridgeUrl=https%3A%2F%2Fde-rs.svmsrv.com%2Fbridges%2F7mojos%2Fbridge.js',
         // bridgeUrl: 'https%3A%2F%2Fde-rs.svmsrv.com%2Fbridges%2F7mojos%2Fbridge.js',
 
-        enableRefresh: 'false',
+        enableRefresh: 'true',
       });
 
       setGameUrl(`${baseUrl}?${params.toString()}`);
