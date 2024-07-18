@@ -1,14 +1,362 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import crypto from 'crypto-js';
 
 const Asd = () => {
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const API_ENDPOINT = 'https://apitest.fundist.org/System/Api';
+  const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
+  const API_PASSWORD = '7094009326200422';
+  const HMAC_SECRET = 'ypltm02l19ui3im4fy620httpu2jc7cjpt3bj925wiym3lhuq5e4f9jvtdj508at';
+
+  // Helper function to generate hash
+  const generateHash = (params) => {
+    const hashString = Object.values(params).join('') + HMAC_SECRET;
+    return crypto.SHA256(hashString).toString(crypto.enc.Hex);
+  };
+
+  // Helper function to generate unique TID
+  const generateTID = () => {
+    return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`;
+  };
+
+  // Fetch games list
+  useEffect(() => {
+    const fetchGames = async () => {
+      const TID = generateTID(); // Unique TID for the request
+      const params = {
+        TID,
+        APIKey: API_KEY,
+        API_Password: API_PASSWORD,
+      };
+      const hash = generateHash(params);
+
+      try {
+        const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/Game/FullList`, {
+          params: {
+            TID,
+            Hash: hash,
+          },
+          headers: {
+            'If-Match': '*', // Add any required precondition headers
+          },
+        });
+        console.log(response.data); // Log response for debugging
+        setGames(response.data.games);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching games:', error.response || error.message); // Log error for debugging
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchGames();
+  }, []);
+
+  const launchGame = async (game) => {
+    const TID = generateTID(); // Unique TID for the request
+    const USERIP = '162.241.85.108'; // Replace with actual user IP
+    const params = {
+      Login: 'testlogin', // Replace with actual login
+      Password: 'testpassword', // Replace with actual password
+      System: game.System,
+      TID,
+      APIKey: API_KEY,
+      API_Password: API_PASSWORD,
+      UserIP: USERIP,
+    };
+    const hash = generateHash(params);
+
+    try {
+      const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/User/AuthHTML`, {
+        params: {
+          ...params,
+          Hash: hash,
+          UserAutoCreate: 1,
+          Currency: 'USD',
+          Country: 'USA',
+          Page: game.PageCode,
+        },
+        headers: {
+          'If-Match': '*', // Add any required precondition headers
+        },
+      });
+
+      // Embedding the game HTML/JS fragment
+      document.getElementById('game-container').innerHTML = response.data;
+    } catch (error) {
+      console.error('Error launching game:', error.response || error.message); // Log error for debugging
+      setError(error.message);
+    }
+  };
+
+  if (loading) {
+    return <div>Loading games...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading games: {error}</div>;
+  }
+
   return (
     <div>
-      
+      <h1>Fundist Games</h1>
+      <div id="game-container"></div>
+      <ul>
+        {games.map((game) => (
+          <li key={game.PageCode}>
+            {game.Name}
+            <button onClick={() => launchGame(game)}>Launch Game</button>
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Asd
+export default Asd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import crypto from 'crypto-js';
+
+// const Asd = () => {
+//   const [games, setGames] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   const API_ENDPOINT = 'https://apitest.fundist.org/System/Api';
+//   const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
+//   const API_PASSWORD = '7094009326200422';
+//   const HMAC_SECRET = 'ypltm02l19ui3im4fy620httpu2jc7cjpt3bj925wiym3lhuq5e4f9jvtdj508at';
+
+//   // Helper function to generate hash
+//   const generateHash = (params) => {
+//     const hashString = Object.values(params).join('') + HMAC_SECRET;
+//     return crypto.SHA256(hashString).toString(crypto.enc.Hex);
+//   };
+
+//   // Fetch games list
+//   useEffect(() => {
+//     const fetchGames = async () => {
+//       const TID = new Date().getTime(); // Unique TID for the request
+//       const params = {
+//         TID,
+//         APIKey: API_KEY,
+//         API_Password: API_PASSWORD,
+//       };
+//       const hash = generateHash(params);
+
+//       try {
+//         const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/Game/FullList`, {
+//           params: {
+//             TID,
+//             Hash: hash,
+//           },
+//         });
+//         setGames(response.data.games);
+//         setLoading(false);
+//       } catch (error) {
+//         setError(error.message);
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchGames();
+//   }, []);
+
+//   const launchGame = async (game) => {
+//     const TID = new Date().getTime(); // Unique TID for the request
+//     const USERIP = '162.241.85.108'; // Replace with actual user IP
+//     const params = {
+//       Login: 'testlogin', // Replace with actual login
+//       Password: 'testpassword', // Replace with actual password
+//       System: game.System,
+//       TID,
+//       APIKey: API_KEY,
+//       API_Password: API_PASSWORD,
+//       UserIP: USERIP,
+//     };
+//     const hash = generateHash(params);
+
+//     try {
+//       const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/User/AuthHTML`, {
+//         params: {
+//           ...params,
+//           Hash: hash,
+//           UserAutoCreate: 1,
+//           Currency: 'USD',
+//           Country: 'USA',
+//           Page: game.PageCode,
+//         },
+//       });
+
+//       // Embedding the game HTML/JS fragment
+//       document.getElementById('game-container').innerHTML = response.data;
+//     } catch (error) {
+//       setError(error.message);
+//     }
+//   };
+
+//   if (loading) {
+//     return <div>Loading games...</div>;
+//   }
+
+//   if (error) {
+//     return <div>Error loading games: {error}</div>;
+//   }
+
+//   return (
+//     <div>
+//       <h1>Fundist Games</h1>
+//       <div id="game-container"></div>
+//       <ul>
+//         {games.map((game) => (
+//           <li key={game.PageCode}>
+//             {game.Name}
+//             <button onClick={() => launchGame(game)}>Launch Game</button>
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// };
+
+// export default Asd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+
+// const Asd = () => {
+//   const [loading, setLoading] = useState(false);
+//   const [gameUrl, setGameUrl] = useState('');
+
+//   const launchGame = async () => {
+//     setLoading(true);
+
+//     try {
+//       const response = await axios.post('https://your-backend-server/launch-game', {
+//         // Add necessary parameters here
+//         login: 'playerLogin',
+//         password: 'playerPassword',
+//         system: '998', // Example value for System
+//         page: 'crazytime:CrazyTime0000001', // Example value for Page
+//         userIp: 'userIpAddress', // User's IP address
+//         userAutoCreate: 1,
+//         currency: 'USD',
+//         country: 'USA',
+//       });
+
+//       const { data } = response;
+
+//       if (data.success) {
+//         setGameUrl(data.gameUrl); // Assuming backend returns gameUrl
+//       } else {
+//         console.error('Error launching game:', data.message);
+//       }
+//     } catch (error) {
+//       console.error('API call failed:', error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <button onClick={launchGame} disabled={loading}>
+//         {loading ? 'Launching...' : 'Launch Game'}
+//       </button>
+//       {gameUrl && (
+//         <iframe
+//           src={gameUrl}
+//           title="Casino Game"
+//           width="100%"
+//           height="600px"
+//           frameBorder="0"
+//           allowFullScreen
+//         ></iframe>
+//       )}
+//     </div>
+//   );
+// };
+
+
+// export default Asd
+
+
+
+
 
 
 

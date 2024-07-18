@@ -298,11 +298,19 @@ const Navbar = () => {
                     className="desktop-item"
                   >
                     <span id="firstsad">{userData?.result?.name || "Login Again"}</span>
-                    <span id="firstsadx1">
+                    {/* <span id="firstsadx1">
                       Bal: {userData?.result?.balance
                         ? parseFloat(userData?.result?.balance).toFixed(2)
                         : "0.00"}
-                    </span>
+                    </span> */}
+                    <span id="firstsadx1">
+  Bal: {userData?.result?.balance
+    ? parseFloat(userData.result.balance)
+        .toFixed(2)
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+    : "0.00"}
+</span>
+
                   </Link>
                   <div id="acccount_detailismobile" className="desktop-item">
                     <span id="firstsad">{userData?.result?.name}</span>
