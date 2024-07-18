@@ -1,121 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import crypto from 'crypto-js';
+import React from 'react'
 
 const Asd = () => {
-  const [games, setGames] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  const API_ENDPOINT = 'https://apitest.fundist.org/System/Api';
-  const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
-  const API_PASSWORD = '7094009326200422';
-  const HMAC_SECRET = 'ypltm02l19ui3im4fy620httpu2jc7cjpt3bj925wiym3lhuq5e4f9jvtdj508at';
-  const CASINO_SERVER_IP = '0.0.0.0'; // Use real IP if known
-
-  // Helper function to generate hash
-  const generateHash = (params) => {
-    const hashString = Object.values(params).join('') + HMAC_SECRET;
-    return crypto.SHA256(hashString).toString(crypto.enc.Hex);
-  };
-
-  // Helper function to generate unique TID
-  const generateTID = () => {
-    return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`.slice(0, 32);
-  };
-
-  // Fetch games list
-  useEffect(() => {
-    const fetchGames = async () => {
-      const TID = generateTID(); // Unique TID for the request
-      const params = {
-        APIKey: API_KEY,
-        API_Password: API_PASSWORD,
-        TID,
-        CASINO_SERVER_IP,
-      };
-      const hash = generateHash(params);
-
-      try {
-        const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/Game/FullList/?&TID=${TID}&Hash=${hash}`, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-        console.log('Response Data:', response.data); // Log response for debugging
-        setGames(response.data.games);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching games:', error.response || error.message); // Log error for debugging
-        setError(error.message);
-        setLoading(false);
-      }
-    };
-
-    fetchGames();
-  }, []);
-
-  const launchGame = async (game) => {
-    const TID = generateTID(); // Unique TID for the request
-    const USERIP = '162.241.85.108'; // Replace with actual user IP
-    const params = {
-      Login: 'testlogin', // Replace with actual login
-      Password: 'testpassword', // Replace with actual password
-      System: game.System,
-      TID,
-      APIKey: API_KEY,
-      API_Password: API_PASSWORD,
-      UserIP: USERIP,
-      CASINO_SERVER_IP,
-    };
-    const hash = generateHash(params);
-
-    try {
-      const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/User/AuthHTML/?&TID=${TID}&Hash=${hash}&Page=${game.PageCode}`, {
-        params: {
-          ...params,
-          UserAutoCreate: 1,
-          Currency: 'USD',
-          Country: 'USA',
-        },
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      // Embedding the game HTML/JS fragment
-      document.getElementById('game-container').innerHTML = response.data;
-    } catch (error) {
-      console.error('Error launching game:', error.response || error.message); // Log error for debugging
-      setError(error.message);
-    }
-  };
-
-  if (loading) {
-    return <div>Loading games...</div>;
-  }
-
-  if (error) {
-    return <div>Error loading games: {error}</div>;
-  }
-
   return (
     <div>
-      <h1>Fundist Games</h1>
-      <div id="game-container"></div>
-      <ul>
-        {games.map((game) => (
-          <li key={game.PageCode}>
-            {game.Name}
-            <button onClick={() => launchGame(game)}>Launch Game</button>
-          </li>
-        ))}
-      </ul>
+      
     </div>
-  );
-};
+  )
+}
 
-export default Asd;
+export default Asd
+
 
 
 
