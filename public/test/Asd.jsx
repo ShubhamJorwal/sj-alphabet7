@@ -11,6 +11,7 @@ const Asd = () => {
   const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
   const API_PASSWORD = '7094009326200422';
   const HMAC_SECRET = 'ypltm02l19ui3im4fy620httpu2jc7cjpt3bj925wiym3lhuq5e4f9jvtdj508at';
+  const CASINO_SERVER_IP = '0.0.0.0'; // Use real IP if known
 
   // Helper function to generate hash
   const generateHash = (params) => {
@@ -20,7 +21,7 @@ const Asd = () => {
 
   // Helper function to generate unique TID
   const generateTID = () => {
-    return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`;
+    return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`.slice(0, 32);
   };
 
   // Fetch games list
@@ -28,23 +29,20 @@ const Asd = () => {
     const fetchGames = async () => {
       const TID = generateTID(); // Unique TID for the request
       const params = {
-        TID,
         APIKey: API_KEY,
         API_Password: API_PASSWORD,
+        TID,
+        CASINO_SERVER_IP,
       };
       const hash = generateHash(params);
 
       try {
-        const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/Game/FullList`, {
-          params: {
-            TID,
-            Hash: hash,
-          },
+        const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/Game/FullList/?&TID=${TID}&Hash=${hash}`, {
           headers: {
-            'If-Match': '*', // Add any required precondition headers
+            'Content-Type': 'application/json',
           },
         });
-        console.log(response.data); // Log response for debugging
+        console.log('Response Data:', response.data); // Log response for debugging
         setGames(response.data.games);
         setLoading(false);
       } catch (error) {
@@ -68,21 +66,20 @@ const Asd = () => {
       APIKey: API_KEY,
       API_Password: API_PASSWORD,
       UserIP: USERIP,
+      CASINO_SERVER_IP,
     };
     const hash = generateHash(params);
 
     try {
-      const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/User/AuthHTML`, {
+      const response = await axios.get(`${API_ENDPOINT}/${API_KEY}/User/AuthHTML/?&TID=${TID}&Hash=${hash}&Page=${game.PageCode}`, {
         params: {
           ...params,
-          Hash: hash,
           UserAutoCreate: 1,
           Currency: 'USD',
           Country: 'USA',
-          Page: game.PageCode,
         },
         headers: {
-          'If-Match': '*', // Add any required precondition headers
+          'Content-Type': 'application/json',
         },
       });
 
@@ -119,6 +116,7 @@ const Asd = () => {
 };
 
 export default Asd;
+
 
 
 
