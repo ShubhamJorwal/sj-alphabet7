@@ -33,7 +33,7 @@ const Asd = () => {
     <div>
       <h1>Game Catalog</h1>
       {/* <div>{message}</div> */}
-      <iframe src={url} frameBorder="0"></iframe>
+      <iframe style={{background:"white"}} src={url} frameBorder="0"></iframe>
       <div>
         <a href={url} target="_blank" rel="noopener noreferrer">
           {url}
