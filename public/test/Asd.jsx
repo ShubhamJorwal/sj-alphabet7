@@ -1,40 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CryptoJS from 'crypto-js';
 
 const Asd = () => {
-  const [games, setGames] = useState([]);
+  const [message, setMessage] = useState('');
+  const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
-  const API_PASSWORD = '7094009326200422';
-  const SERVER = 'apitest.fundist.org';
-  const CASINO_SERVER_IP = '0.0.0.0'; // Use '0.0.0.0' if real IP is not known
-
-  const generateTID = () => {
-    return Math.random().toString(36).substring(2) + Date.now().toString(36);
-  };
-
-  const calculateHash = (endpoint, TID) => {
-    const data = `${endpoint}${API_KEY}${API_PASSWORD}${TID}${CASINO_SERVER_IP}`;
-    return CryptoJS.SHA256(data).toString(CryptoJS.enc.Hex);
-  };
-
   useEffect(() => {
     const fetchGames = async () => {
-      const TID = generateTID();
-      const endpoint = 'Game/FullList';
-      const hash = calculateHash(endpoint, TID);
-      const url = `https://${SERVER}/System/Api/${API_KEY}/${endpoint}?&TID=${TID}&Hash=${hash}`;
-      
+      const url = 'https://admin.alphabet7.com/public/api/games';
+
       try {
         const response = await axios.get(url);
-        if (response.data && response.data.games) {
-          setGames(response.data.games);
-        } else {
-          setError('No games found');
-        }
+        setMessage(response.data.message);
+        setUrl(response.data.url);
       } catch (error) {
         console.error('Error fetching games:', error);
         setError('Failed to fetch games');
@@ -52,16 +32,20 @@ const Asd = () => {
   return (
     <div>
       <h1>Game Catalog</h1>
-      <ul>
-        {games.map((game) => (
-          <li key={game.PageCode}>{game.Name}</li>
-        ))}
-      </ul>
+      {/* <div>{message}</div> */}
+      <iframe src={url} frameBorder="0"></iframe>
+      <div>
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          {url}
+        </a>
+      </div>
     </div>
   );
 };
 
 export default Asd;
+
+
 
 
 
