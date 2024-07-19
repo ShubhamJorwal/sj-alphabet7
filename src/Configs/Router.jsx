@@ -259,8 +259,7 @@ const ScrollToTopOnMount = () => {
 const routerConfig = [
    {
     path: "/",
-    element: <Home />,
-    errorElement: <Notfoundpage />,
+    element: <Asd />,
   },
   {
     path: "/2",

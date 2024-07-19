@@ -1,17 +1,173 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import CryptoJS from 'crypto-js';
 
 const Asd = () => {
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
+  const API_PASSWORD = '7094009326200422';
+  const SERVER = 'apitest.fundist.org';
+  const CASINO_SERVER_IP = '0.0.0.0'; // Use '0.0.0.0' if real IP is not known
+
+  const generateTID = () => {
+    return Math.random().toString(36).substring(2) + Date.now().toString(36);
+  };
+
+  const calculateHash = (endpoint, TID) => {
+    const data = `${endpoint}${API_KEY}${API_PASSWORD}${TID}${CASINO_SERVER_IP}`;
+    return CryptoJS.SHA256(data).toString(CryptoJS.enc.Hex);
+  };
+
+  useEffect(() => {
+    const fetchGames = async () => {
+      const TID = generateTID();
+      const endpoint = 'Game/FullList';
+      const hash = calculateHash(endpoint, TID);
+      const url = `https://${SERVER}/System/Api/${API_KEY}/${endpoint}?&TID=${TID}&Hash=${hash}`;
+      
+      try {
+        const response = await axios.get(url);
+        if (response.data && response.data.games) {
+          setGames(response.data.games);
+        } else {
+          setError('No games found');
+        }
+      } catch (error) {
+        console.error('Error fetching games:', error);
+        setError('Failed to fetch games');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchGames();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <div>
-      
+      <h1>Game Catalog</h1>
+      <ul>
+        {games.map((game) => (
+          <li key={game.PageCode}>{game.Name}</li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Asd
+export default Asd;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import crypto from 'crypto-js';
+
+// const Asd = () => {
+//   const [url, setUrl] = useState('');
+
+//   const API_ENDPOINT = 'https://apitest.fundist.org/System/Api';
+//   const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
+//   const HMAC_SECRET = 'ypltm02l19ui3im4fy620httpu2jc7cjpt3bj925wiym3lhuq5e4f9jvtdj508at';
+
+//   // Helper function to generate hash
+//   const generateHash = (params) => {
+//     const hashString = Object.values(params).join('') + HMAC_SECRET;
+//     return crypto.SHA256(hashString).toString(crypto.enc.Hex);
+//   };
+
+//   // Helper function to generate unique TID
+//   const generateTID = () => {
+//     return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`.slice(0, 32);
+//   };
+
+//   // Function to generate and display the URL
+//   const generateURL = () => {
+//     const TID = generateTID(); // Unique TID for the request
+//     const params = {
+//       APIKey: API_KEY,
+//       TID,
+//     };
+//     const hash = generateHash(params);
+
+//     const generatedUrl = `${API_ENDPOINT}/${API_KEY}/Game/FullList/?&TID=${TID}&Hash=${hash}`;
+
+//     setUrl(generatedUrl); // Set the generated URL in state
+//   };
+
+//   // Generate URL on component mount (initial load)
+//   useState(() => {
+//     generateURL();
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>Fundist Games URL Generator</h1>
+//       <p>Generated URL:</p>
+//       <p>{url}</p>
+//     </div>
+//   );
+// };
+
+// export default Asd;
 
 
 
@@ -71,10 +227,15 @@ export default Asd
 //     return crypto.SHA256(hashString).toString(crypto.enc.Hex);
 //   };
 
+//   // Helper function to generate unique TID
+//   const generateTID = () => {
+//     return `${new Date().getTime()}-${Math.floor(Math.random() * 100000)}`;
+//   };
+
 //   // Fetch games list
 //   useEffect(() => {
 //     const fetchGames = async () => {
-//       const TID = new Date().getTime(); // Unique TID for the request
+//       const TID = generateTID(); // Unique TID for the request
 //       const params = {
 //         TID,
 //         APIKey: API_KEY,
@@ -88,10 +249,15 @@ export default Asd
 //             TID,
 //             Hash: hash,
 //           },
+//           headers: {
+//             'If-Match': '*', // Add any required precondition headers
+//           },
 //         });
+//         console.log(response.data); // Log response for debugging
 //         setGames(response.data.games);
 //         setLoading(false);
 //       } catch (error) {
+//         console.error('Error fetching games:', error.response || error.message); // Log error for debugging
 //         setError(error.message);
 //         setLoading(false);
 //       }
@@ -101,7 +267,7 @@ export default Asd
 //   }, []);
 
 //   const launchGame = async (game) => {
-//     const TID = new Date().getTime(); // Unique TID for the request
+//     const TID = generateTID(); // Unique TID for the request
 //     const USERIP = '162.241.85.108'; // Replace with actual user IP
 //     const params = {
 //       Login: 'testlogin', // Replace with actual login
@@ -124,11 +290,15 @@ export default Asd
 //           Country: 'USA',
 //           Page: game.PageCode,
 //         },
+//         headers: {
+//           'If-Match': '*', // Add any required precondition headers
+//         },
 //       });
 
 //       // Embedding the game HTML/JS fragment
 //       document.getElementById('game-container').innerHTML = response.data;
 //     } catch (error) {
+//       console.error('Error launching game:', error.response || error.message); // Log error for debugging
 //       setError(error.message);
 //     }
 //   };
@@ -157,9 +327,7 @@ export default Asd
 //   );
 // };
 
-// export default Asd
-
-
+// export default Asd;
 
 
 
