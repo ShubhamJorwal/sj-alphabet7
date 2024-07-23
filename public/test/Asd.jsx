@@ -9,12 +9,15 @@ const Asd = () => {
 
   useEffect(() => {
     const fetchGames = async () => {
-      const url = 'https://admin.alphabet7.com/public/api/games';
+      const apiUrl = 'https://admin.alphabet7.com/public/api/games';
 
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(apiUrl);
         setMessage(response.data.message);
         setUrl(response.data.url);
+        if (response.data.url) {
+          window.open(response.data.url, '_blank', 'noopener,noreferrer');
+        }
       } catch (error) {
         console.error('Error fetching games:', error);
         setError('Failed to fetch games');
@@ -32,13 +35,117 @@ const Asd = () => {
   return (
     <div>
       <h1>Game Catalog</h1>
-      {/* <div>{message}</div> */}
-      <iframe width={1000} height={500} style={{background:"white"}} src={url} frameBorder="0"></iframe>
+      <div>{message}</div>
       <div>
         <a href={url} target="_blank" rel="noopener noreferrer">
           {url}
         </a>
       </div>
+    </div>
+  );
+};
+
+export default Asd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// const Asd = () => {
+//   const [message, setMessage] = useState('');
+//   const [url, setUrl] = useState('');
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     const fetchGames = async () => {
+//       const url = 'https://admin.alphabet7.com/public/api/games';
+
+//       try {
+//         const response = await axios.get(url);
+//         setMessage(response.data.message);
+//         setUrl(response.data.url);
+//       } catch (error) {
+//         console.error('Error fetching games:', error);
+//         setError('Failed to fetch games');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchGames();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (error) return <div>{error}</div>;
+
+//   return (
+//     <div>
+//       <h1>Game Catalog</h1>
+//       {/* <div>{message}</div> */}
+//       <iframe width={1000} height={500} style={{background:"white"}} src={url} frameBorder="0"></iframe>
+//       <div>
+//         <a href={url} target="_blank" rel="noopener noreferrer">
+//           {url}
+//         </a>
+//       </div>
 
     
 
@@ -47,11 +154,11 @@ const Asd = () => {
 
 
 
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default Asd;
+// export default Asd;
 
 
 
