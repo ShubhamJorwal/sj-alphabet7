@@ -7,10 +7,12 @@ import Loader01 from '../../Components/Loaders/Loader01';
 import Loader02 from '../../Components/Loaders/Loader02';
 import Loader03 from '../../Components/Loaders/Loader03';
 
-const EzugiV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, DirectFromSearch, GamesOfEzugi, loading}) => {
+const NetentV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, DirectFromSearch, loading, GamesOfNetEnt }) => {
 
+ 
 
   if (loading) return <Loader03 />;
+
   return (
     <>
       <div className="sec45x9wjklca5w">
@@ -59,7 +61,7 @@ const EzugiV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, Direct
 
 
 <div id="gamescardchildren">
-          {GamesOfEzugi.map((game) => (
+          {GamesOfNetEnt.map((game) => (
             <div id="sdjfksdjlkc2023" key={game.ID} className="">
 
             <div className="staff_image_holder">
@@ -72,7 +74,7 @@ const EzugiV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, Direct
                     </svg>
                   </button>
                   <span className="spanofc15s265wimg">
-                    <img className="abs15x5w6532sdf63sd" src="/Logos/CompanyLogos/ezugi.png" alt="" />
+                    <img className="abs15x5w6532sdf63sd" src="/Logos/CompanyLogos/netent.png" alt="" />
                     <img className="c15s265wimg" src={game.ImageFullPath} alt={`Image ${game.Trans.en}`} />
                   </span>
                   <div className="dataofgamex">
@@ -138,4 +140,4 @@ const EzugiV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, Direct
 };
 
 
-export default EzugiV1
+export default NetentV1

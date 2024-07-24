@@ -3,7 +3,6 @@ import axios from 'axios';
 import './test.scss'
 
 const Asd = () => {
-  const [message, setMessage] = useState('');
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,9 +13,7 @@ const Asd = () => {
 
       try {
         const response = await axios.get(apiUrl);
-        setMessage(response.data.message);
         setGames(response.data.gameresponse || []);
-          console.log(games.length)
         if (response.data.url) {
           window.open(response.data.url, '_blank', 'noopener,noreferrer');
         }
@@ -37,27 +34,113 @@ const Asd = () => {
   return (
     <div>
       <h1>Game Catalog</h1>
-      <div>{message}</div>
+      {/* <div>{message}</div> */}
       <div className='jklsajdflkjsdfkljsdkfljlsd'>
-        {games.map((game) => (
+      {games.reduce((uniqueMerchants, game) => {
+    if (!uniqueMerchants.includes(game.SubMerchantName)) {
+      uniqueMerchants.push(game.SubMerchantName);
+      return uniqueMerchants.concat(
+        <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
+          {/* <p>Merchant: {game.MerchantName}</p> */}
+      
+        </div>
+      );
+    }
+    return uniqueMerchants;
+  }, [])}
+       
+        {/* {games.map((game) => (
           <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
             <h2>{game.Trans.en}</h2>
             <img src={game.ImageFullPath} alt={game.Trans.en} style={{ width: '100px' }} />
             <p>System: {game.System}</p>
             <p>Page Code: {game.PageCode}</p>
             <p>Merchant: {game.MerchantName}</p>
+            <p>Merchant: {game.SubMerchantName}</p>
             <p>Min Bet: {game.MinBetDefault}</p>
             <p>Max Bet: {game.MaxBetDefault}</p>
             <p>RTP: {game.RTP}%</p>
             <p>Categories: {game.Categories.join(', ')}</p>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );
 };
 
 export default Asd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import './test.scss'
+
+// const Asd = () => {
+//   const [message, setMessage] = useState('');
+//   const [games, setGames] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     const fetchGames = async () => {
+//       const apiUrl = 'https://admin.alphabet7.com/public/api/games';
+
+//       try {
+//         const response = await axios.get(apiUrl);
+//         setMessage(response.data.message);
+//         setGames(response.data.gameresponse || []);
+//         if (response.data.url) {
+//           window.open(response.data.url, '_blank', 'noopener,noreferrer');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching games:', error);
+//         setError('Failed to fetch games');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchGames();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (error) return <div>{error}</div>;
+
+//   return (
+//     <div>
+//       <h1>Game Catalog</h1>
+//       <div>{message}</div>
+//       <div className='jklsajdflkjsdfkljsdkfljlsd'>
+//         {games.map((game) => (
+//           <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
+//             <h2>{game.Trans.en}</h2>
+//             <img src={game.ImageFullPath} alt={game.Trans.en} style={{ width: '100px' }} />
+//             <p>System: {game.System}</p>
+//             <p>Page Code: {game.PageCode}</p>
+//             <p>Merchant: {game.MerchantName}</p>
+//             <p>Min Bet: {game.MinBetDefault}</p>
+//             <p>Max Bet: {game.MaxBetDefault}</p>
+//             <p>RTP: {game.RTP}%</p>
+//             <p>Categories: {game.Categories.join(', ')}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Asd;
 
 
 
