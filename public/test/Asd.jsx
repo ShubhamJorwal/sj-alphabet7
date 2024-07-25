@@ -1,74 +1,137 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './test.scss'
 
-const Asd = () => {
-  const [games, setGames] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+const LaunchGame = () => {
+  // const [login, setLogin] = useState('sj01');
+  const [login, setLogin] = useState('13823_sj01');
+  // const [password, setPassword] = useState('Sj@123456');
+  const [password, setPassword] = useState('aK{wyY84');
+  const [userIP, setUserIP] = useState('162.12.245.8');
+  const [url, setUrl] = useState('');
+  const [hashstring, sethashstring] = useState('');
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    const fetchGames = async () => {
-      const apiUrl = 'https://admin.alphabet7.com/public/api/games';
+  const handleLaunchGame = async () => {
+    try {
+      const response = await axios.post('https://admin.alphabet7.com/public/api/launch-game', {
+        login,
+        password,
+        userIP,
+      });
 
-      try {
-        const response = await axios.get(apiUrl);
-        setGames(response.data.gameresponse || []);
-        if (response.data.url) {
-          window.open(response.data.url, '_blank', 'noopener,noreferrer');
-        }
-      } catch (error) {
-        console.error('Error fetching games:', error);
-        setError('Failed to fetch games');
-      } finally {
-        setLoading(false);
-      }
-    };
+      const { url, TID, Hash, rawString } = response.data;
 
-    fetchGames();
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+      setUrl(url);  // Set the constructed URL in the state
+      sethashstring(rawString);  // Set the constructed URL in the state
+      setError('');  // Clear any previous errors
+    } catch (err) {
+      setError('Failed to launch game. Please try again.');
+      console.error('Error launching game:', err);
+    }
+  };
 
   return (
     <div>
-      <h1>Game Catalog</h1>
-      {/* <div>{message}</div> */}
-      <div className='jklsajdflkjsdfkljsdkfljlsd'>
-      {games.reduce((uniqueMerchants, game) => {
-    if (!uniqueMerchants.includes(game.SubMerchantName)) {
-      uniqueMerchants.push(game.SubMerchantName);
-      return uniqueMerchants.concat(
-        <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
-          {/* <p>Merchant: {game.MerchantName}</p> */}
-      
+      <input
+        type="text"
+        placeholder="Login"
+        value={login}
+        onChange={(e) => setLogin(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="User IP"
+        value={userIP}
+        onChange={(e) => setUserIP(e.target.value)}
+      />
+      <button onClick={handleLaunchGame}>Launch Game</button>
+
+      {url && (
+        <div>
+          <p><strong>Constructed URL:</strong></p>
+          <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+
+          <p>{hashstring}</p>
         </div>
-      );
-    }
-    return uniqueMerchants;
-  }, [])}
-       
-        {/* {games.map((game) => (
-          <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
-            <h2>{game.Trans.en}</h2>
-            <img src={game.ImageFullPath} alt={game.Trans.en} style={{ width: '100px' }} />
-            <p>System: {game.System}</p>
-            <p>Page Code: {game.PageCode}</p>
-            <p>Merchant: {game.MerchantName}</p>
-            <p>Merchant: {game.SubMerchantName}</p>
-            <p>Min Bet: {game.MinBetDefault}</p>
-            <p>Max Bet: {game.MaxBetDefault}</p>
-            <p>RTP: {game.RTP}%</p>
-            <p>Categories: {game.Categories.join(', ')}</p>
-          </div>
-        ))} */}
-      </div>
+      )}
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };
 
-export default Asd;
+export default LaunchGame;
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import './test.scss'
+
+// const Asd = () => {
+//   const [games, setGames] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   useEffect(() => {
+//     const fetchGames = async () => {
+//       const apiUrl = 'https://admin.alphabet7.com/public/api/games';
+
+//       try {
+//         const response = await axios.get(apiUrl);
+//         setGames(response.data.gameresponse || []);
+//         if (response.data.url) {
+//           window.open(response.data.url, '_blank', 'noopener,noreferrer');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching games:', error);
+//         setError('Failed to fetch games');
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchGames();
+//   }, []);
+
+//   if (loading) return <div>Loading...</div>;
+//   if (error) return <div>{error}</div>;
+
+//   return (
+//     <div>
+//       <h1>Game Catalog</h1>
+//       {/* <div>{message}</div> */}
+//       <div className='jklsajdflkjsdfkljsdkfljlsd'>
+
+       
+//         {games.map((game) => (
+//           <div key={game.ID} style={{ border: '1px solid #ccc', padding: '10px', margin: '10px 0' }}>
+//             <h2>{game.Trans.en}</h2>
+//             <img src={game.ImageFullPath} alt={game.Trans.en} style={{ width: '100px' }} />
+//             <p>System: {game.System}</p>
+//             <p>Page Code: {game.PageCode}</p>
+//             <p>Merchant: {game.MerchantName}</p>
+//             <p>Merchant: {game.SubMerchantName}</p>
+//             <p>Min Bet: {game.MinBetDefault}</p>
+//             <p>Max Bet: {game.MaxBetDefault}</p>
+//             <p>RTP: {game.RTP}%</p>
+//             <p>Categories: {game.Categories.join(', ')}</p>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Asd;
 
 
 

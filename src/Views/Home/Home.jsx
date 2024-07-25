@@ -36,7 +36,7 @@ const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   // const [selectedComponent, setSelectedComponent] = useState("BetGames");
-  const [selectedComponent, setSelectedComponent] = useState("Ezugi");
+  const [selectedComponent, setSelectedComponent] = useState("Evolution");
 
   
   const [userData, setUserData] = useState(null);
@@ -173,9 +173,9 @@ useEffect(() => {
 
 
         
-        if (response.data.url) {
-          window.open(response.data.url, '_blank', 'noopener,noreferrer');
-        }
+        // if (response.data.url) {
+        //   window.open(response.data.url, '_blank', 'noopener,noreferrer');
+        // }
       } catch (error) {
         console.error('Error fetching games:', error);
         setError('Failed to fetch games');
@@ -251,8 +251,8 @@ useEffect(() => {
 
   const dataArrayx2 = [
     { name: "All Games", logo: "/Logos/CompanyLogos/allgames.png" },
-    { name: "Ezugi", logo: "/Logos/CompanyLogos/ezugi.png" },
     { name: "Evolution", logo: "/Logos/CompanyLogos/evolutoin.png" },
+    { name: "Ezugi", logo: "/Logos/CompanyLogos/ezugi.png" },
     { name: "Netent", logo: "/Logos/CompanyLogos/netent.png" },
     { name: "Redtigerlogo", logo: "/Logos/CompanyLogos/redtigerlogo.png" },
     { name: "Nolimitcity", logo: "/Logos/CompanyLogos/nolimitcity.png" },
@@ -320,6 +320,26 @@ useEffect(() => {
       <Comp01 />
       <Footer />
       <MainSearchbar handleSearchClick={handleSearchClick} HideScrollOverflow={HideScrollOverflow} handleClosePopup={handleClosePopup} showPopup={showPopup} currentBalance={currentBalance}/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </>
   );
 };
