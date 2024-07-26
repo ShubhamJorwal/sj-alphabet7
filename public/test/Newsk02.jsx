@@ -7,7 +7,7 @@ const Newx02 = () => {
     const [userIP, setUserIP] = useState('');
     const [systemId, setSystemId] = useState('998');
     const [page, setPage] = useState('roulette:9dxyqtvp0rjqvu6r');
-    const [generatedUrl, setGeneratedUrl] = useState('');
+    const [htmlContent, setHtmlContent] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -15,54 +15,42 @@ const Newx02 = () => {
         const storedPassword = localStorage.getItem('password');
         const storedUserIP = localStorage.getItem('userIP');
 
-        
-
         if (storedLogin) setLogin(storedLogin);
         if (storedPassword) setPassword(storedPassword);
         if (storedUserIP) setUserIP(storedUserIP);
     }, []);
 
     useEffect(() => {
-        const fetchUrl = async () => {
+        const fetchContent = async () => {
             try {
-                console.log('Fetching URL with:', { login, password, userIP, systemId, page }); // Added for debugging
                 const response = await axios.post('https://admin.alphabet7.com/public/api/launch-game', {
                     login,
                     password,
                     userIP,
                     systemId,
-                    page,
+                    page
                 });
-                setGeneratedUrl(response.data.url);
-                setError('');
+                if (response.data.html) {
+                    setHtmlContent(response.data.html);
+                    setError('');
+                } else if (response.data.error) {
+                    setError(response.data.error);
+                }
             } catch (error) {
-                setError('Failed to generate game URL');
+                setError('Failed to fetch content');
                 console.error(error);
             }
         };
 
         if (login && password && userIP && systemId && page) {
-            fetchUrl();
+            fetchContent();
         }
     }, [login, password, userIP, systemId, page]);
 
     return (
         <div>
-            <h1>Game Launcher</h1>
-            {generatedUrl ? (
-                <>
-                <iframe src={generatedUrl} width="100%" height="600px" />
-                <a href={generatedUrl} target='_black'>fetch game</a>
-                </>
-            ) : (
-                <p>Loading...</p>
-            )}
-            {error && (
-                <div style={{ color: 'red' }}>
-                    <h2>Error</h2>
-                    <p>{error}</p>
-                </div>
-            )}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </div>
     );
 };
