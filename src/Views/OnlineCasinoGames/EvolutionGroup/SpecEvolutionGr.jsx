@@ -35,7 +35,11 @@ const SpecEvolutionGr = ({SelectedPageCode, SelectedSystemId, DirectFromSearch})
                     country
                 });
                 if (response.data.html) {
-                    const html = response.data.html;
+                    let html = response.data.html;
+                    // Remove the initial '1,' if present
+                    if (html.startsWith('1,')) {
+                        html = html.substring(2);
+                    }
                     // Extract script content
                     const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
                     const scripts = html.match(scriptRegex) || [];

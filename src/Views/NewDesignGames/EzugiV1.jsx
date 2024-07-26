@@ -163,7 +163,7 @@ const EzugiV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, Direct
                   <img src="/Final_Assets/Icons/casinoico1.svg" alt="" />Online Casino
                 </h2>
                 <h2 className="zx58we65se23s">
-                  <img src="/Logos/CompanyLogos/betgames.png" alt="" />
+                  <img src="/Logos/CompanyLogos/ezugi.png" alt="" />
                 </h2>
                 <div className="s45s52ccrossbsjcom4">
                   <p>Balance: ₹{currentBalance}</p>

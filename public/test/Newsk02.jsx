@@ -5,8 +5,8 @@ const Newx02 = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [userIP, setUserIP] = useState('');
-    const [systemId, setSystemId] = useState('836');
-    const [page, setPage] = useState('pinatasandponies:pinatasandponies'); // Example game page code
+    const [systemId, setSystemId] = useState('983');
+    const [page, setPage] = useState('selectGame:baccarat'); // Example game page code
     const [currency, setCurrency] = useState('INR'); // Default currency
     const [country, setCountry] = useState('India'); // Default country
     const [htmlContent, setHtmlContent] = useState('');

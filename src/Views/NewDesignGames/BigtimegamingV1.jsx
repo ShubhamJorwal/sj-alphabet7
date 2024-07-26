@@ -6,9 +6,79 @@ import './gamesdesigncard.scss';
 import Loader01 from '../../Components/Loaders/Loader01';
 import Loader02 from '../../Components/Loaders/Loader02';
 import Loader03 from '../../Components/Loaders/Loader03';
+import SpecEvolutionGr from '../OnlineCasinoGames/EvolutionGroup/SpecEvolutionGr';
 
 const BigtimegamingV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow, DirectFromSearch, loading, GamesOfBigtimeGaming }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [SelectedSystemId, setSelectedSystemId] = useState(null);
+  const [SelectedPageCode, setSelectedPageCode] = useState(null);
 
+
+  // const [selectedCategory, setSelectedCategory] = useState("All Games");
+  // const [filteredGames, setFilteredGames] = useState([]);
+  // const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    if (DirectFromSearch) {
+      setSelectedGameId(DirectFromSearch);
+      setIsOpen(true);
+    }
+  }, [DirectFromSearch]);
+
+  const togglePopup = (pageCode, system) => {
+    console.log('PageCode:', pageCode);
+    console.log('System:', system);
+    setSelectedPageCode(pageCode);
+    setSelectedSystemId(system);
+    setIsOpen(!isOpen);
+  
+    if (DirectFromSearch) {
+      window.location.reload();
+    }
+  };
+  
+
+  useEffect(() => {
+    HideScrollOverflow(isOpen);
+
+    return () => {
+      HideScrollOverflow(false);
+    };
+  }, [isOpen]);
+
+
+
+
+
+
+
+
+  
+
+  // useEffect(() => {
+  //   const filtered = allgamesdataofpfslw.filter(
+  //     (game) =>
+  //       game.provider === "betgames" &&
+  //       game.categories.includes(selectedCategory)
+  //   );
+  //   setFilteredGames(filtered);
+  // }, [selectedCategory]);
+
+  // useEffect(() => {
+  //   const uniqueCategories = new Set();
+  //   allgamesdataofpfslw.forEach((game) => {
+  //     if (game.provider === "betgames") {
+  //       game.categories.forEach((category) => {
+  //         uniqueCategories.add(category);
+  //       });
+  //     }
+  //   });
+  //   setCategories([ ...Array.from(uniqueCategories)]);
+  // }, []);
+
+  // const handleCategoryClick = (category) => {
+  //   setSelectedCategory(category);
+  // };
 
   if (loading) return <Loader03 />;
 
@@ -65,7 +135,7 @@ const BigtimegamingV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow
 
             <div className="staff_image_holder">
                   <button
-                  //  onClick={() => togglePopup(data.urlparam)}
+                   onClick={() => togglePopup(game.PageCode , game.System)}
                    className="play_button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
@@ -77,7 +147,7 @@ const BigtimegamingV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow
                     <img className="c15s265wimg" src={game.ImageFullPath} alt={`Image ${game.Trans.en}`} />
                   </span>
                   <div className="dataofgamex">
-                    <p className="scksw55x5s">Ezugi</p>
+                    <p className="scksw55x5s">BIG TIME GAMING</p>
                     <p className="scksw55x5s2">{game.Trans.en}</p>
                   </div>
 
@@ -98,15 +168,14 @@ const BigtimegamingV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow
 
 
 
-
-          {/* {isOpen && (
+{isOpen && (
             <div className="popupsdfdselayover">
               <div className="xs48w5sd3225">
                 <h2 className="h2ofxsfew65s">
                   <img src="/Final_Assets/Icons/casinoico1.svg" alt="" />Online Casino
                 </h2>
                 <h2 className="zx58we65se23s">
-                  <img src="/Logos/CompanyLogos/betgames.png" alt="" />
+                  <img src="/Logos/CompanyLogos/bigtimegaming.png" alt="" />
                 </h2>
                 <div className="s45s52ccrossbsjcom4">
                   <p>Balance: ₹{currentBalance}</p>
@@ -117,11 +186,13 @@ const BigtimegamingV1 = ({ currentBalance, handleSearchClick, HideScrollOverflow
                 </div>
               </div>
               <div className="popupcontentxcfsdfjklsd" onClick={(e) => e.stopPropagation()}>
-                <SpecBetGamesNew GameId={selectedGameId} DirectFromSearch={DirectFromSearch} />
+                <SpecEvolutionGr SelectedSystemId={SelectedSystemId} SelectedPageCode={SelectedPageCode} DirectFromSearch={DirectFromSearch} />
                 
               </div>
             </div>
-          )} */}
+          )}
+
+
 
 
 
