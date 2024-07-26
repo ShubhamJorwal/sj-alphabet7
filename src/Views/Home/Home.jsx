@@ -37,7 +37,7 @@ const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   // const [selectedComponent, setSelectedComponent] = useState("BetGames");
   // const [selectedComponent, setSelectedComponent] = useState("Evolution");
-  const [selectedComponent, setSelectedComponent] = useState("Ezugi");
+  const [selectedComponent, setSelectedComponent] = useState("Netent");
 
   
   const [userData, setUserData] = useState(null);
