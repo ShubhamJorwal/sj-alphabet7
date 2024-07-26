@@ -5,8 +5,10 @@ const Newx02 = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [userIP, setUserIP] = useState('');
-    const [systemId, setSystemId] = useState('998');
-    const [page, setPage] = useState('roulette:9dxyqtvp0rjqvu6r');
+    const [systemId, setSystemId] = useState('836');
+    const [page, setPage] = useState('pinatasandponies:pinatasandponies'); // Example game page code
+    const [currency, setCurrency] = useState('INR'); // Default currency
+    const [country, setCountry] = useState('India'); // Default country
     const [htmlContent, setHtmlContent] = useState('');
     const [error, setError] = useState('');
 
@@ -28,10 +30,27 @@ const Newx02 = () => {
                     password,
                     userIP,
                     systemId,
-                    page
+                    page,
+                    currency,
+                    country
                 });
                 if (response.data.html) {
-                    setHtmlContent(response.data.html);
+                    const html = response.data.html;
+                    // Extract script content
+                    const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
+                    const scripts = html.match(scriptRegex) || [];
+                    const cleanHtml = html.replace(scriptRegex, '');
+
+                    setHtmlContent(cleanHtml);
+
+                    // Execute scripts
+                    scripts.forEach(scriptTag => {
+                        const scriptContent = scriptTag.replace(/<script\b[^>]*>/i, '').replace(/<\/script>/i, '');
+                        const scriptElement = document.createElement('script');
+                        scriptElement.innerHTML = scriptContent;
+                        document.body.appendChild(scriptElement);
+                    });
+
                     setError('');
                 } else if (response.data.error) {
                     setError(response.data.error);
@@ -45,7 +64,7 @@ const Newx02 = () => {
         if (login && password && userIP && systemId && page) {
             fetchContent();
         }
-    }, [login, password, userIP, systemId, page]);
+    }, [login, password, userIP, systemId, page, currency, country]);
 
     return (
         <div>

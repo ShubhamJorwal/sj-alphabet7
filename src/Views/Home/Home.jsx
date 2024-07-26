@@ -36,7 +36,8 @@ const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   // const [selectedComponent, setSelectedComponent] = useState("BetGames");
-  const [selectedComponent, setSelectedComponent] = useState("Evolution");
+  // const [selectedComponent, setSelectedComponent] = useState("Evolution");
+  const [selectedComponent, setSelectedComponent] = useState("Ezugi");
 
   
   const [userData, setUserData] = useState(null);
