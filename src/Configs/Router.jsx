@@ -243,6 +243,8 @@ import ContactUs from "../Views/ContactUs/ContactUs";
 import BetDetails from "../Views/Account/BetDetails/BetDetails";
 import BetGames, { SpecBetGames } from "../Views/OnlineCasinoGames/betgames/BetGames";
 import Asd from "../../public/test/Asd";
+import Newsk from "../../public/test/Newsk";
+import Newx02 from "../../public/test/Newsk02";
 
 // Define a higher-order component to scroll to the top
 const ScrollToTopOnMount = () => {
@@ -266,6 +268,14 @@ const routerConfig = [
   {
     path: "/2",
     element: <Asd />,
+  },
+  {
+    path: "/3",
+    element: <Newsk />,
+  },
+  {
+    path: "/4",
+    element: <Newx02 />,
   },
   {
     path: "/about-us",

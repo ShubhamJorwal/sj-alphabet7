@@ -1,72 +1,474 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const LaunchGame = () => {
-  // const [login, setLogin] = useState('sj01');
-  const [login, setLogin] = useState('13823_sj01');
-  // const [password, setPassword] = useState('Sj@123456');
-  const [password, setPassword] = useState('aK{wyY84');
-  const [userIP, setUserIP] = useState('162.12.245.8');
-  const [url, setUrl] = useState('');
-  const [hashstring, sethashstring] = useState('');
-  const [error, setError] = useState('');
+const GameLauncher = () => {
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    const [userIP, setUserIP] = useState('');
+    const [systemId, setSystemId] = useState('998');
+    const [page, setPage] = useState('roulette:9dxyqtvp0rjqvu6r');
+    const [generatedUrl, setGeneratedUrl] = useState('');
+    const [error, setError] = useState('');
 
-  const handleLaunchGame = async () => {
-    try {
-      const response = await axios.post('https://admin.alphabet7.com/public/api/launch-game', {
-        login,
-        password,
-        userIP,
-      });
+    useEffect(() => {
+        const storedLogin = localStorage.getItem('login');
+        const storedPassword = localStorage.getItem('password');
+        const storedUserIP = localStorage.getItem('userIP');
 
-      const { url, TID, Hash, rawString } = response.data;
+        
 
-      setUrl(url);  // Set the constructed URL in the state
-      sethashstring(rawString);  // Set the constructed URL in the state
-      setError('');  // Clear any previous errors
-    } catch (err) {
-      setError('Failed to launch game. Please try again.');
-      console.error('Error launching game:', err);
-    }
-  };
+        if (storedLogin) setLogin(storedLogin);
+        if (storedPassword) setPassword(storedPassword);
+        if (storedUserIP) setUserIP(storedUserIP);
+    }, []);
 
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Login"
-        value={login}
-        onChange={(e) => setLogin(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="User IP"
-        value={userIP}
-        onChange={(e) => setUserIP(e.target.value)}
-      />
-      <button onClick={handleLaunchGame}>Launch Game</button>
+    useEffect(() => {
+        const fetchUrl = async () => {
+            try {
+                console.log('Fetching URL with:', { login, password, userIP, systemId, page }); // Added for debugging
+                const response = await axios.post('https://admin.alphabet7.com/public/api/launch-game', {
+                    login,
+                    password,
+                    userIP,
+                    systemId,
+                    page,
+                });
+                setGeneratedUrl(response.data.url);
+                setError('');
+            } catch (error) {
+                setError('Failed to generate game URL');
+                console.error(error);
+            }
+        };
 
-      {url && (
+        if (login && password && userIP && systemId && page) {
+            fetchUrl();
+        }
+    }, [login, password, userIP, systemId, page]);
+
+    return (
         <div>
-          <p><strong>Constructed URL:</strong></p>
-          <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
-
-          <p>{hashstring}</p>
+            <h1>Game Launcher</h1>
+            {generatedUrl ? (
+                // <iframe src={generatedUrl} width="100%" height="600px" />
+                <a href={generatedUrl} target='_black'>fetch game</a>
+            ) : (
+                <p>Loading...</p>
+            )}
+            {error && (
+                <div style={{ color: 'red' }}>
+                    <h2>Error</h2>
+                    <p>{error}</p>
+                </div>
+            )}
         </div>
-      )}
-
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
-  );
+    );
 };
 
-export default LaunchGame;
+export default GameLauncher;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import axios from 'axios';
+
+// const LaunchGame = () => {
+//   // const [login, setLogin] = useState('sj01');
+//   const [login, setLogin] = useState('13823_sj01');
+//   // const [password, setPassword] = useState('Sj@123456');
+//   const [password, setPassword] = useState('aK{wyY84');
+//   const [userIP, setUserIP] = useState('162.12.245.8');
+//   const [url, setUrl] = useState('');
+//   const [hashstring, sethashstring] = useState('');
+//   const [error, setError] = useState('');
+
+//   const handleLaunchGame = async () => {
+//     try {
+//       const response = await axios.post('https://admin.alphabet7.com/public/api/launch-game', {
+//         login,
+//         password,
+//         userIP,
+//       });
+
+//       const { url, TID, Hash, requested_url } = response.data;
+
+//       setUrl(requested_url);  // Set the constructed URL in the state
+//       sethashstring(Hash);  // Set the constructed URL in the state
+//       setError('');  // Clear any previous errors
+//     } catch (err) {
+//       setError('Failed to launch game. Please try again.');
+//       console.error('Error launching game:', err);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         placeholder="Login"
+//         value={login}
+//         onChange={(e) => setLogin(e.target.value)}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//       />
+//       <input
+//         type="text"
+//         placeholder="User IP"
+//         value={userIP}
+//         onChange={(e) => setUserIP(e.target.value)}
+//       />
+//       <button onClick={handleLaunchGame}>Launch Game</button>
+
+//       {url && (
+//         <div>
+//           <p><strong>Constructed URL:</strong></p>
+//           <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+
+//           <p>{hashstring}</p>
+//         </div>
+//       )}
+
+//       {error && <p style={{ color: 'red' }}>{error}</p>}
+//     </div>
+//   );
+// };
+
+// export default LaunchGame;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import CryptoJS from 'crypto-js';
+
+// const Asd = () => {
+//   const [login, setLogin] = useState('');
+//   const [password, setPassword] = useState('');
+//   const [currency, setCurrency] = useState('USD');
+//   const [language, setLanguage] = useState('en');
+//   const [regIP, setRegIP] = useState('');
+//   const [nickname, setNickname] = useState('');
+//   const [timezone, setTimezone] = useState(0);
+//   const [name, setName] = useState('');
+//   const [lastName, setLastName] = useState('');
+//   const [gender, setGender] = useState('');
+//   const [phone, setPhone] = useState('');
+//   const [altPhone, setAltPhone] = useState('');
+//   const [city, setCity] = useState('');
+//   const [address, setAddress] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [affiliateID, setAffiliateID] = useState('');
+
+//   const API_KEY = 'c55b38377070f9e5a42ac80f96f51130';
+//   const API_PASSWORD = '7094009326200422';
+//   const SERVER = 'apitest.fundist.org';
+//   const CASINO_SERVER_IP = '0.0.0.0';
+
+//   // Generate a unique TID
+//   const generateTID = () => {
+//     const timestamp = Date.now(); // Get the current timestamp
+//     const randomNum = Math.floor(Math.random() * 1000000); // Generate a random number
+//     return `${timestamp}${randomNum}`; // Concatenate timestamp and random number
+//   };
+
+//   // Calculate MD5 hash
+//   const calculateHash = (endpoint, TID, login, password, currency) => {
+//     const data = `User/Add/${CASINO_SERVER_IP}/${TID}/${API_KEY}/${login}/${password}/${currency}/${API_PASSWORD}`;
+//     return CryptoJS.MD5(data).toString(); // Use CryptoJS to compute MD5 hash
+//   };
+
+//   const launchGame = () => {
+//     const TID = generateTID();
+//     const endpoint = 'User/Add';
+//     const hash = calculateHash(endpoint, TID, login, password, currency);
+
+//     const url = `https://${SERVER}/System/Api/${API_KEY}/${endpoint}`;
+//     const params = {
+//       Login: login,
+//       Password: password,
+//       TID,
+//       Currency: currency,
+//       Hash: hash,
+//       Language: language,
+//       RegistrationIP: regIP,
+//       UserAutoCreate: 1, // Ensure user is created automatically
+//       Nick: nickname,
+//       Timezone: timezone,
+//       Name: name,
+//       LastName: lastName,
+//       Gender: gender,
+//       Phone: phone,
+//       AlternativePhone: altPhone,
+//       City: city,
+//       Address: address,
+//       Email: email,
+//       AffiliateID: affiliateID
+//     };
+
+//     const query = new URLSearchParams(params).toString();
+//     const finalUrl = `${url}?${query}`;
+
+//     // Print the URL to the console
+//     console.log('Constructed URL:', finalUrl);
+
+//     // You can also use fetch to send the request if needed
+//     // fetch(finalUrl, { method: 'GET' })
+//     //   .then(response => response.json())
+//     //   .then(data => console.log(data))
+//     //   .catch(error => console.error('Error:', error));
+//   };
+
+//   return (
+//     <div>
+//       <div>
+//         <label htmlFor="login">Login:</label>
+//         <input
+//           id="login"
+//           type="text"
+//           placeholder="Login"
+//           value={login}
+//           onChange={(e) => setLogin(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="password">Password:</label>
+//         <input
+//           id="password"
+//           type="password"
+//           placeholder="Password"
+//           value={password}
+//           onChange={(e) => setPassword(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="currency">Currency:</label>
+//         <input
+//           id="currency"
+//           type="text"
+//           placeholder="Currency"
+//           value={currency}
+//           onChange={(e) => setCurrency(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="language">Language:</label>
+//         <input
+//           id="language"
+//           type="text"
+//           placeholder="Language"
+//           value={language}
+//           onChange={(e) => setLanguage(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="regIP">Registration IP:</label>
+//         <input
+//           id="regIP"
+//           type="text"
+//           placeholder="Registration IP"
+//           value={regIP}
+//           onChange={(e) => setRegIP(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="nickname">Nickname:</label>
+//         <input
+//           id="nickname"
+//           type="text"
+//           placeholder="Nickname"
+//           value={nickname}
+//           onChange={(e) => setNickname(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="timezone">Timezone:</label>
+//         <input
+//           id="timezone"
+//           type="number"
+//           placeholder="Timezone"
+//           value={timezone}
+//           onChange={(e) => setTimezone(parseInt(e.target.value))}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="name">Name:</label>
+//         <input
+//           id="name"
+//           type="text"
+//           placeholder="Name"
+//           value={name}
+//           onChange={(e) => setName(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="lastName">Last Name:</label>
+//         <input
+//           id="lastName"
+//           type="text"
+//           placeholder="Last Name"
+//           value={lastName}
+//           onChange={(e) => setLastName(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="gender">Gender:</label>
+//         <input
+//           id="gender"
+//           type="text"
+//           placeholder="Gender"
+//           value={gender}
+//           onChange={(e) => setGender(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="phone">Phone:</label>
+//         <input
+//           id="phone"
+//           type="text"
+//           placeholder="Phone"
+//           value={phone}
+//           onChange={(e) => setPhone(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="altPhone">Alternative Phone:</label>
+//         <input
+//           id="altPhone"
+//           type="text"
+//           placeholder="Alternative Phone"
+//           value={altPhone}
+//           onChange={(e) => setAltPhone(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="city">City:</label>
+//         <input
+//           id="city"
+//           type="text"
+//           placeholder="City"
+//           value={city}
+//           onChange={(e) => setCity(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="address">Address:</label>
+//         <input
+//           id="address"
+//           type="text"
+//           placeholder="Address"
+//           value={address}
+//           onChange={(e) => setAddress(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="email">Email:</label>
+//         <input
+//           id="email"
+//           type="email"
+//           placeholder="Email"
+//           value={email}
+//           onChange={(e) => setEmail(e.target.value)}
+//         />
+//       </div>
+//       <div>
+//         <label htmlFor="affiliateID">Affiliate ID:</label>
+//         <input
+//           id="affiliateID"
+//           type="text"
+//           placeholder="Affiliate ID"
+//           value={affiliateID}
+//           onChange={(e) => setAffiliateID(e.target.value)}
+//         />
+//       </div>
+//       <button onClick={launchGame}>Launch Game</button>
+//     </div>
+//   );
+// };
+
+// export default Asd;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

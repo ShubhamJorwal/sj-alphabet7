@@ -22,6 +22,9 @@ import { RouterProvider } from "react-router-dom";
 
 import 'react-toastify/dist/ReactToastify.css';
 
+localStorage.setItem('login', 'sj01');
+localStorage.setItem('password', 'aK{wyY84');
+localStorage.setItem('userIP', '162.12.245.8');
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
