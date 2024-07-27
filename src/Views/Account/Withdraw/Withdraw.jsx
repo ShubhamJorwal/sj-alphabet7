@@ -322,7 +322,7 @@ const calculateWithdrawalAmount = (amount, withdrawalType) => {
             <div id="x2s558e2233s">
 <p>Minimum withdrawal amount is 100rs</p>
             <p>If you choose instant withdrawal, you'll be charged a 5% fee, and the funds will be transferred to your wallet within 1 minute to 1 hour.</p>
-  <p>If you choose normal withdrawal, the service charge will be lower than for instant withdrawal, and the funds will be added to your wallet in 1-2 days or 10 hours.</p>
+  {/* <p>If you choose normal withdrawal, the service charge will be lower than for instant withdrawal, and the funds will be added to your wallet in 1-2 days or 10 hours.</p> */}
 
           </div>
           </div>
